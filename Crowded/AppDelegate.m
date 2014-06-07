@@ -23,6 +23,7 @@
     
     [self setupAppearance];
     self.beaconManager = [[CDBeaconManager alloc] init];
+    [self.beaconManager startMonitoring];
     
     
     

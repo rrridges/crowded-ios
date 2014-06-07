@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface CDBeaconManager : NSObject
-
+- (void)startMonitoring;
 @end
