@@ -47,6 +47,16 @@
 		C909D6CD19439E45002272AC /* label_crowded.png in Resources */ = {isa = PBXBuildFile; fileRef = C909D6CB19439E45002272AC /* label_crowded.png */; };
 		C909D6CE19439E45002272AC /* label_crowded@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C909D6CC19439E45002272AC /* label_crowded@2x.png */; };
 		C909D6D219439FC5002272AC /* CDCrowdedView.m in Sources */ = {isa = PBXBuildFile; fileRef = C909D6D119439FC5002272AC /* CDCrowdedView.m */; };
+		C909D6D51943A6D5002272AC /* atwoods.png in Resources */ = {isa = PBXBuildFile; fileRef = C909D6D31943A6D5002272AC /* atwoods.png */; };
+		C909D6D61943A6D5002272AC /* atwoods@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C909D6D41943A6D5002272AC /* atwoods@2x.png */; };
+		C909D6D91943A833002272AC /* CDVenue.m in Sources */ = {isa = PBXBuildFile; fileRef = C909D6D81943A833002272AC /* CDVenue.m */; };
+		C909D6DD1943B1D3002272AC /* CDMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C909D6DC1943B1D3002272AC /* CDMenuItem.m */; };
+		C909D6E01943B2E9002272AC /* CDBorderedView.m in Sources */ = {isa = PBXBuildFile; fileRef = C909D6DF1943B2E9002272AC /* CDBorderedView.m */; };
+		C909D6E41943C160002272AC /* arrow_blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C909D6E21943C160002272AC /* arrow_blue@2x.png */; };
+		C909D6E51943C160002272AC /* arrow_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = C909D6E31943C160002272AC /* arrow_blue.png */; };
+		C909D6E91943C261002272AC /* NSString+CrowdLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = C909D6E81943C261002272AC /* NSString+CrowdLevel.m */; };
+		C909D6EC1943CD56002272AC /* CDBeaconManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C909D6EB1943CD56002272AC /* CDBeaconManager.m */; };
+		C909D6EE1943CD85002272AC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C909D6ED1943CD85002272AC /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +117,22 @@
 		C909D6CC19439E45002272AC /* label_crowded@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "label_crowded@2x.png"; sourceTree = "<group>"; };
 		C909D6D019439FC5002272AC /* CDCrowdedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDCrowdedView.h; sourceTree = "<group>"; };
 		C909D6D119439FC5002272AC /* CDCrowdedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDCrowdedView.m; sourceTree = "<group>"; };
+		C909D6D31943A6D5002272AC /* atwoods.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = atwoods.png; sourceTree = "<group>"; };
+		C909D6D41943A6D5002272AC /* atwoods@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "atwoods@2x.png"; sourceTree = "<group>"; };
+		C909D6D71943A833002272AC /* CDVenue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDVenue.h; sourceTree = "<group>"; };
+		C909D6D81943A833002272AC /* CDVenue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDVenue.m; sourceTree = "<group>"; };
+		C909D6DB1943B1D3002272AC /* CDMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMenuItem.h; sourceTree = "<group>"; };
+		C909D6DC1943B1D3002272AC /* CDMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMenuItem.m; sourceTree = "<group>"; };
+		C909D6DE1943B2E9002272AC /* CDBorderedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDBorderedView.h; sourceTree = "<group>"; };
+		C909D6DF1943B2E9002272AC /* CDBorderedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDBorderedView.m; sourceTree = "<group>"; };
+		C909D6E11943B3FC002272AC /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		C909D6E21943C160002272AC /* arrow_blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_blue@2x.png"; sourceTree = "<group>"; };
+		C909D6E31943C160002272AC /* arrow_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_blue.png; sourceTree = "<group>"; };
+		C909D6E71943C261002272AC /* NSString+CrowdLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CrowdLevel.h"; sourceTree = "<group>"; };
+		C909D6E81943C261002272AC /* NSString+CrowdLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CrowdLevel.m"; sourceTree = "<group>"; };
+		C909D6EA1943CD56002272AC /* CDBeaconManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDBeaconManager.h; sourceTree = "<group>"; };
+		C909D6EB1943CD56002272AC /* CDBeaconManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDBeaconManager.m; sourceTree = "<group>"; };
+		C909D6ED1943CD85002272AC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +140,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C909D6EE1943CD85002272AC /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +157,7 @@
 		C909D65519438C61002272AC = {
 			isa = PBXGroup;
 			children = (
+				C909D6ED1943CD85002272AC /* CoreLocation.framework */,
 				C909D66019438C61002272AC /* Crowded */,
 				C909D67719438C61002272AC /* CrowdedTests */,
 				C909D65F19438C61002272AC /* Products */,
@@ -148,6 +176,8 @@
 		C909D66019438C61002272AC /* Crowded */ = {
 			isa = PBXGroup;
 			children = (
+				C909D6E61943C1F7002272AC /* Categories */,
+				C909D6DA1943A884002272AC /* Models */,
 				C909D68819438E9A002272AC /* Resources */,
 				C909D68719438D83002272AC /* ViewControllers */,
 				C909D6CF19439F96002272AC /* Views */,
@@ -165,6 +195,7 @@
 			children = (
 				C909D66219438C61002272AC /* Info.plist */,
 				C909D66319438C61002272AC /* main.m */,
+				C909D6E11943B3FC002272AC /* Common.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -207,6 +238,10 @@
 		C909D68919438EA3002272AC /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C909D6E21943C160002272AC /* arrow_blue@2x.png */,
+				C909D6E31943C160002272AC /* arrow_blue.png */,
+				C909D6D31943A6D5002272AC /* atwoods.png */,
+				C909D6D41943A6D5002272AC /* atwoods@2x.png */,
 				C909D6CB19439E45002272AC /* label_crowded.png */,
 				C909D6CC19439E45002272AC /* label_crowded@2x.png */,
 				C909D6C719439D67002272AC /* selected_tab.png */,
@@ -256,8 +291,32 @@
 			children = (
 				C909D6D019439FC5002272AC /* CDCrowdedView.h */,
 				C909D6D119439FC5002272AC /* CDCrowdedView.m */,
+				C909D6DE1943B2E9002272AC /* CDBorderedView.h */,
+				C909D6DF1943B2E9002272AC /* CDBorderedView.m */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		C909D6DA1943A884002272AC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C909D6D71943A833002272AC /* CDVenue.h */,
+				C909D6D81943A833002272AC /* CDVenue.m */,
+				C909D6DB1943B1D3002272AC /* CDMenuItem.h */,
+				C909D6DC1943B1D3002272AC /* CDMenuItem.m */,
+				C909D6EA1943CD56002272AC /* CDBeaconManager.h */,
+				C909D6EB1943CD56002272AC /* CDBeaconManager.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		C909D6E61943C1F7002272AC /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				C909D6E71943C261002272AC /* NSString+CrowdLevel.h */,
+				C909D6E81943C261002272AC /* NSString+CrowdLevel.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,6 +368,11 @@
 				TargetAttributes = {
 					C909D65D19438C61002272AC = {
 						CreatedOnToolsVersion = 6.0;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					C909D67319438C61002272AC = {
 						CreatedOnToolsVersion = 6.0;
@@ -343,8 +407,11 @@
 				C909D6961943941A002272AC /* Edmondsans-Regular.otf in Resources */,
 				C909D6CD19439E45002272AC /* label_crowded.png in Resources */,
 				C909D6AD19439726002272AC /* unselected_me.png in Resources */,
+				C909D6D51943A6D5002272AC /* atwoods.png in Resources */,
+				C909D6E51943C160002272AC /* arrow_blue.png in Resources */,
 				C909D6C919439D67002272AC /* selected_tab.png in Resources */,
 				C909D6AF19439726002272AC /* unselected_more.png in Resources */,
+				C909D6E41943C160002272AC /* arrow_blue@2x.png in Resources */,
 				C909D69D19439570002272AC /* Archer-Medium-Pro.otf in Resources */,
 				C909D6941943941A002272AC /* Edmondsans-Bold.otf in Resources */,
 				C909D6B019439726002272AC /* unselected_more@2x.png in Resources */,
@@ -370,6 +437,7 @@
 				C909D69C19439570002272AC /* Archer-Book-Pro.otf in Resources */,
 				C909D6AA19439726002272AC /* unselected_find@2x.png in Resources */,
 				C909D6C6194397DD002272AC /* selected_order@2x.png in Resources */,
+				C909D6D61943A6D5002272AC /* atwoods@2x.png in Resources */,
 				C909D6CE19439E45002272AC /* label_crowded@2x.png in Resources */,
 				C909D6AE19439726002272AC /* unselected_me@2x.png in Resources */,
 				C909D66F19438C61002272AC /* Images.xcassets in Resources */,
@@ -392,9 +460,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C909D6D91943A833002272AC /* CDVenue.m in Sources */,
 				C909D6D219439FC5002272AC /* CDCrowdedView.m in Sources */,
+				C909D6EC1943CD56002272AC /* CDBeaconManager.m in Sources */,
+				C909D6E91943C261002272AC /* NSString+CrowdLevel.m in Sources */,
+				C909D6DD1943B1D3002272AC /* CDMenuItem.m in Sources */,
 				C909D66719438C61002272AC /* AppDelegate.m in Sources */,
 				C909D68619438D12002272AC /* CDVenueViewController.m in Sources */,
+				C909D6E01943B2E9002272AC /* CDBorderedView.m in Sources */,
 				C909D66419438C61002272AC /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

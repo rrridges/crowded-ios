@@ -7,12 +7,12 @@
 //
 
 #import "AppDelegate.h"
-
-#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+#import "Common.h"
+#import "CDBeaconManager.h"
 
 @interface AppDelegate ()
             
-
+@property (nonatomic) CDBeaconManager *beaconManager;
 @end
 
 @implementation AppDelegate
@@ -22,6 +22,10 @@
     // Override point for customization after application launch.
     
     [self setupAppearance];
+    self.beaconManager = [[CDBeaconManager alloc] init];
+    
+    
+    
     return YES;
 }
 
@@ -33,8 +37,12 @@
                                                            NSFontAttributeName: [UIFont fontWithName:@"Archer-Bold" size:18.0],
                                                            NSForegroundColorAttributeName: UIColorFromRGB(0x232323)
                                                            }];
+    
     [[UITabBar appearance] setBarTintColor:[UIColor blackColor]];
     [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName: [UIFont fontWithName:@"Edmondsans-Medium" size:11.0]
+                                                       
+                                                         } forState:UIControlStateNormal];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     [[UITabBar appearance] setSelectionIndicatorImage:[UIImage imageNamed:@"selected_tab.png"]];
 }

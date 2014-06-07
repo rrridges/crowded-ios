@@ -16,18 +16,21 @@
                     </tabBar>
                     <connections>
                         <segue destination="CNJ-AI-ael" kind="relationship" relationship="viewControllers" id="3tU-iq-Yxb"/>
+                        <segue destination="LdP-6U-YQp" kind="relationship" relationship="viewControllers" id="8pS-Y1-HPb"/>
                         <segue destination="86h-lb-xkR" kind="relationship" relationship="viewControllers" id="wpO-jp-NX2"/>
+                        <segue destination="1sE-KD-So1" kind="relationship" relationship="viewControllers" id="CnC-QM-xQw"/>
+                        <segue destination="SBu-6U-th2" kind="relationship" relationship="viewControllers" id="ehk-gY-ldn"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u7z-zE-cAi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-602" y="136"/>
         </scene>
-        <!--Navigation Controller - More-->
+        <!--Navigation Controller - Home-->
         <scene sceneID="NFT-ql-1vc">
             <objects>
                 <navigationController id="CNJ-AI-ael" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="More" image="unselected_more.png" id="gjQ-Jn-bWl"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="unselected_more.png" id="gjQ-Jn-bWl"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dbz-7S-p8t">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -71,12 +74,16 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cambridge, MA 02139" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jLg-QN-3i3">
-                                        <rect key="frame" x="20" y="115" width="280" height="21"/>
+                                        <rect key="frame" x="20" y="113" width="280" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Edmondsans-Regular" family="Edmondsans" pointSize="15"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="atwoods.png" id="r1S-HB-lJN">
+                                        <rect key="frame" x="124" y="13" width="73" height="73"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="877 Cambridge St." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6EL-Z3-HHc">
                                         <rect key="frame" x="20" y="94" width="280" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -85,32 +92,178 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.098039215686274508" green="0.10588235294117647" blue="0.12156862745098039" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="label_crowded.png" id="a2I-Fm-wcZ">
-                                <rect key="frame" x="47" y="203" width="227" height="47"/>
+                                <rect key="frame" x="47" y="202" width="227" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" id="bhh-Dc-WXc" customClass="CDCrowdedView">
-                                <rect key="frame" x="52" y="209" width="35" height="35"/>
+                                <rect key="frame" x="50" y="206" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LIVELY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ofN-bU-UtB">
+                                <rect key="frame" x="50" y="216" width="224" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Edmondsans-Medium" family="Edmondsans" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" id="x5y-1D-Vl7" customClass="CDBorderedView">
+                                <rect key="frame" x="14" y="263" width="292" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SMUTTYNOSE CELLAR DOOR" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kOB-tY-9oQ">
+                                        <rect key="frame" x="10" y="11" width="262" height="15"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Edmondsans-Medium" family="Edmondsans" pointSize="15"/>
+                                        <color key="textColor" red="0.8666666666666667" green="0.38823529411764707" blue="0.25882352941176467" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="a9q-Oc-7vf">
+                                        <rect key="frame" x="10" y="28" width="201" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Edmondsans-Regular" family="Edmondsans" pointSize="12"/>
+                                        <color key="textColor" red="0.63921568627450975" green="0.63921568627450975" blue="0.65098039215686276" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NJC-HO-EgB">
+                                        <rect key="frame" x="224" y="24" width="68" height="15"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Edmondsans-Regular" family="Edmondsans" pointSize="15"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.098039215686274508" green="0.10588235294117647" blue="0.12156862745098039" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="bQO-7N-s07" customClass="CDBorderedView">
+                                <rect key="frame" x="14" y="343" width="292" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drinks" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LMD-fN-4pq">
+                                        <rect key="frame" x="20" y="18" width="206" height="18"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Archer-Bold" family="Archer" pointSize="18"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_blue.png" id="oPm-4F-mkO">
+                                        <rect key="frame" x="248" y="11" width="32" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.098039215690000001" green="0.1058823529" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="xAq-Di-HPK" customClass="CDBorderedView">
+                                <rect key="frame" x="14" y="447" width="292" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Menu" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fIo-SW-XO8">
+                                        <rect key="frame" x="20" y="18" width="206" height="18"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Archer-Bold" family="Archer" pointSize="18"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_blue.png" id="I4u-6x-0Oj">
+                                        <rect key="frame" x="248" y="11" width="32" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.098039215690000001" green="0.1058823529" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="e5b-Z5-Dwg" customClass="CDBorderedView">
+                                <rect key="frame" x="14" y="395" width="292" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Most Popular" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5Ow-Mg-Lac">
+                                        <rect key="frame" x="20" y="18" width="206" height="18"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Archer-Bold" family="Archer" pointSize="18"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_blue.png" id="xTF-fB-Ob6">
+                                        <rect key="frame" x="248" y="11" width="32" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.098039215690000001" green="0.1058823529" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="qvH-hx-5PE"/>
+                    <connections>
+                        <outlet property="address1Label" destination="6EL-Z3-HHc" id="GId-gc-w82"/>
+                        <outlet property="address2Label" destination="jLg-QN-3i3" id="kjT-0v-f4N"/>
+                        <outlet property="crowdLevelLabel" destination="ofN-bU-UtB" id="JHH-jz-jKk"/>
+                        <outlet property="crowdedView" destination="bhh-Dc-WXc" id="oAd-f6-mpn"/>
+                        <outlet property="specialDescriptionLabel" destination="a9q-Oc-7vf" id="1qb-Pb-Ze5"/>
+                        <outlet property="specialNameLabel" destination="kOB-tY-9oQ" id="8Cj-8M-lBW"/>
+                        <outlet property="specialPriceLabel" destination="NJC-HO-EgB" id="QVH-jE-ncb"/>
+                        <outlet property="specialView" destination="x5y-1D-Vl7" id="DeN-vL-YKa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="371" y="136"/>
         </scene>
+        <!--Navigation Controller - Friends-->
+        <scene sceneID="d38-A4-oxT">
+            <objects>
+                <navigationController id="LdP-6U-YQp" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Friends" image="unselected_friends.png" id="ash-NX-Qx2"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="J1R-Vy-Tv3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wLN-2R-Oz8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-111" y="1475"/>
+        </scene>
+        <!--Navigation Controller - Order-->
+        <scene sceneID="VrX-5D-T1a">
+            <objects>
+                <navigationController id="1sE-KD-So1" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Order" image="unselected_order.png" id="aRq-T8-nPf"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kIx-6z-ZcG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W1P-XF-7Yh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-111" y="2103"/>
+        </scene>
+        <!--Navigation Controller - Me-->
+        <scene sceneID="vHG-gD-oGK">
+            <objects>
+                <navigationController id="SBu-6U-th2" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Me" image="unselected_me.png" id="Xqu-zJ-tgj"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KGR-lj-JeL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lFf-E1-vA2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-111" y="2728"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="arrow_blue.png" width="9" height="16"/>
+        <image name="atwoods.png" width="73" height="73"/>
         <image name="background.png" width="320" height="568"/>
         <image name="label_crowded.png" width="227" height="47"/>
         <image name="unselected_find.png" width="35" height="35"/>
+        <image name="unselected_friends.png" width="35" height="35"/>
+        <image name="unselected_me.png" width="35" height="35"/>
         <image name="unselected_more.png" width="35" height="35"/>
+        <image name="unselected_order.png" width="35" height="35"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

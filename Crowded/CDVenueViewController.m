@@ -7,9 +7,23 @@
 //
 
 #import "CDVenueViewController.h"
+#import "CDVenue.h"
+#import "CDCrowdedView.h"
+#import "CDBorderedView.h"
+#import "Common.h"
+#import "CDMenuItem.h"
+#import "NSString+CrowdLevel.h"
 
 @interface CDVenueViewController ()
-
+@property (nonatomic) CDVenue *venue;
+@property (weak, nonatomic) IBOutlet UILabel *address1Label;
+@property (weak, nonatomic) IBOutlet UILabel *address2Label;
+@property (weak, nonatomic) IBOutlet CDCrowdedView *crowdedView;
+@property (weak, nonatomic) IBOutlet UILabel *crowdLevelLabel;
+@property (weak, nonatomic) IBOutlet CDBorderedView *specialView;
+@property (weak, nonatomic) IBOutlet UILabel *specialNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *specialDescriptionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *specialPriceLabel;
 @end
 
 @implementation CDVenueViewController
@@ -26,8 +40,42 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationItem.title = @"Atwoods Tavern";
+    [self setupWithVenue:[self dummyVenue]];
+    [self setupWithSpecial:[self dummySpecial]];
     // Do any additional setup after loading the view.
+}
+
+- (CDVenue *) dummyVenue {
+    CDVenue *venue = [[CDVenue alloc] init];
+    venue.address1 = @"222 Third Street";
+    venue.address2 = @"Cambridge, MA 02142";
+    venue.name = @"Intrepid Labs";
+    venue.crowdLevel = 2;
+    
+    return venue;
+}
+
+- (CDMenuItem *)dummySpecial {
+    CDMenuItem *item = [[CDMenuItem alloc] init];
+    item.itemDescription = @"Farmhouse brewed with white sage, Baltimore MD 12.0 Oz, 6.6 ABV";
+    item.name = @"SMUTTYNOSE CELLAR DOOR";
+    item.price = [[NSDecimalNumber alloc] initWithDouble:8.0];
+    return item;
+}
+
+- (void)setupWithVenue:(CDVenue *)venue {
+    self.address1Label.text = venue.address1;
+    self.address2Label.text = venue.address2;
+    self.crowdedView.crowdLevel = venue.crowdLevel;
+    self.crowdLevelLabel.text = [NSString stringForCrowdLevel:venue.crowdLevel];
+    self.navigationItem.title = venue.name;
+}
+
+- (void)setupWithSpecial:(CDMenuItem *)item {
+    self.specialView.layer.borderColor = UIColorFromRGB(0xDD6342).CGColor;
+    self.specialNameLabel.text = item.name;
+    self.specialDescriptionLabel.text = item.itemDescription;
+    self.specialPriceLabel.text = [NSString stringWithFormat:@"$%.2f", item.price.floatValue];
 }
 
 - (void)didReceiveMemoryWarning
