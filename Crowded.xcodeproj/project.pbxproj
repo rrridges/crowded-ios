@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		C909D66419438C61002272AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C909D66319438C61002272AC /* main.m */; };
 		C909D66719438C61002272AC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C909D66619438C61002272AC /* AppDelegate.m */; };
-		C909D66A19438C61002272AC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C909D66919438C61002272AC /* ViewController.m */; };
 		C909D66D19438C61002272AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C909D66B19438C61002272AC /* Main.storyboard */; };
 		C909D66F19438C61002272AC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C909D66E19438C61002272AC /* Images.xcassets */; };
 		C909D67B19438C61002272AC /* CrowdedTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C909D67A19438C61002272AC /* CrowdedTests.m */; };
+		C909D68619438D12002272AC /* CDVenueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C909D68519438D12002272AC /* CDVenueViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,13 +31,13 @@
 		C909D66319438C61002272AC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C909D66519438C61002272AC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C909D66619438C61002272AC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C909D66819438C61002272AC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		C909D66919438C61002272AC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C909D66C19438C61002272AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C909D66E19438C61002272AC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C909D67419438C61002272AC /* CrowdedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CrowdedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C909D67919438C61002272AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C909D67A19438C61002272AC /* CrowdedTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CrowdedTests.m; sourceTree = "<group>"; };
+		C909D68419438D12002272AC /* CDVenueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDVenueViewController.h; sourceTree = "<group>"; };
+		C909D68519438D12002272AC /* CDVenueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDVenueViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,10 +79,9 @@
 		C909D66019438C61002272AC /* Crowded */ = {
 			isa = PBXGroup;
 			children = (
+				C909D68719438D83002272AC /* ViewControllers */,
 				C909D66519438C61002272AC /* AppDelegate.h */,
 				C909D66619438C61002272AC /* AppDelegate.m */,
-				C909D66819438C61002272AC /* ViewController.h */,
-				C909D66919438C61002272AC /* ViewController.m */,
 				C909D66B19438C61002272AC /* Main.storyboard */,
 				C909D66E19438C61002272AC /* Images.xcassets */,
 				C909D66119438C61002272AC /* Supporting Files */,
@@ -114,6 +113,15 @@
 				C909D67919438C61002272AC /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C909D68719438D83002272AC /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C909D68419438D12002272AC /* CDVenueViewController.h */,
+				C909D68519438D12002272AC /* CDVenueViewController.m */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,8 +223,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C909D66A19438C61002272AC /* ViewController.m in Sources */,
 				C909D66719438C61002272AC /* AppDelegate.m in Sources */,
+				C909D68619438D12002272AC /* CDVenueViewController.m in Sources */,
 				C909D66419438C61002272AC /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -404,6 +412,7 @@
 				C909D68019438C61002272AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C909D68119438C61002272AC /* Build configuration list for PBXNativeTarget "CrowdedTests" */ = {
 			isa = XCConfigurationList;
@@ -412,6 +421,7 @@
 				C909D68319438C61002272AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
