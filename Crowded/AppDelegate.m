@@ -26,6 +26,7 @@
 }
 
 - (void)setupAppearance {
+    
     [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0xDC6341)];
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setTitleTextAttributes:@{
@@ -35,6 +36,7 @@
     [[UITabBar appearance] setBarTintColor:[UIColor blackColor]];
     [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    [[UITabBar appearance] setSelectionIndicatorImage:[UIImage imageNamed:@"selected_tab.png"]];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

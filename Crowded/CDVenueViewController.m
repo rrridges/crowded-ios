@@ -26,7 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = @"Atwoods Tavern";
+    self.navigationItem.title = @"Atwoods Tavern";
     // Do any additional setup after loading the view.
 }
 

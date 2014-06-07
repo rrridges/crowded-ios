@@ -27,7 +27,7 @@
         <scene sceneID="NFT-ql-1vc">
             <objects>
                 <navigationController id="CNJ-AI-ael" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="More" id="gjQ-Jn-bWl"/>
+                    <tabBarItem key="tabBarItem" title="More" image="unselected_more.png" id="gjQ-Jn-bWl"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dbz-7S-p8t">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -40,11 +40,11 @@
             </objects>
             <point key="canvasLocation" x="-111" y="136"/>
         </scene>
-        <!--Navigation Controller - Item-->
+        <!--Navigation Controller - Find-->
         <scene sceneID="zd5-zG-Mxe">
             <objects>
                 <navigationController id="86h-lb-xkR" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="LPf-fL-d89"/>
+                    <tabBarItem key="tabBarItem" title="Find" image="unselected_find.png" id="LPf-fL-d89"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="OSa-eC-qj7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -78,6 +78,8 @@
     </scenes>
     <resources>
         <image name="background.png" width="320" height="568"/>
+        <image name="unselected_find.png" width="35" height="35"/>
+        <image name="unselected_more.png" width="35" height="35"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
