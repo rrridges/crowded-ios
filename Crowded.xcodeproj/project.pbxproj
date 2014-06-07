@@ -44,6 +44,9 @@
 		C909D6C6194397DD002272AC /* selected_order@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C909D6BC194397DD002272AC /* selected_order@2x.png */; };
 		C909D6C919439D67002272AC /* selected_tab.png in Resources */ = {isa = PBXBuildFile; fileRef = C909D6C719439D67002272AC /* selected_tab.png */; };
 		C909D6CA19439D67002272AC /* selected_tab@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C909D6C819439D67002272AC /* selected_tab@2x.png */; };
+		C909D6CD19439E45002272AC /* label_crowded.png in Resources */ = {isa = PBXBuildFile; fileRef = C909D6CB19439E45002272AC /* label_crowded.png */; };
+		C909D6CE19439E45002272AC /* label_crowded@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C909D6CC19439E45002272AC /* label_crowded@2x.png */; };
+		C909D6D219439FC5002272AC /* CDCrowdedView.m in Sources */ = {isa = PBXBuildFile; fileRef = C909D6D119439FC5002272AC /* CDCrowdedView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +103,10 @@
 		C909D6BC194397DD002272AC /* selected_order@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "selected_order@2x.png"; sourceTree = "<group>"; };
 		C909D6C719439D67002272AC /* selected_tab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = selected_tab.png; sourceTree = "<group>"; };
 		C909D6C819439D67002272AC /* selected_tab@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "selected_tab@2x.png"; sourceTree = "<group>"; };
+		C909D6CB19439E45002272AC /* label_crowded.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = label_crowded.png; sourceTree = "<group>"; };
+		C909D6CC19439E45002272AC /* label_crowded@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "label_crowded@2x.png"; sourceTree = "<group>"; };
+		C909D6D019439FC5002272AC /* CDCrowdedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDCrowdedView.h; sourceTree = "<group>"; };
+		C909D6D119439FC5002272AC /* CDCrowdedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDCrowdedView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +150,7 @@
 			children = (
 				C909D68819438E9A002272AC /* Resources */,
 				C909D68719438D83002272AC /* ViewControllers */,
+				C909D6CF19439F96002272AC /* Views */,
 				C909D66519438C61002272AC /* AppDelegate.h */,
 				C909D66619438C61002272AC /* AppDelegate.m */,
 				C909D66B19438C61002272AC /* Main.storyboard */,
@@ -199,6 +207,8 @@
 		C909D68919438EA3002272AC /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C909D6CB19439E45002272AC /* label_crowded.png */,
+				C909D6CC19439E45002272AC /* label_crowded@2x.png */,
 				C909D6C719439D67002272AC /* selected_tab.png */,
 				C909D6C819439D67002272AC /* selected_tab@2x.png */,
 				C909D6B3194397DD002272AC /* selected_find.png */,
@@ -239,6 +249,15 @@
 				C909D6921943941A002272AC /* Edmondsans-Regular.otf */,
 			);
 			name = Fonts;
+			sourceTree = "<group>";
+		};
+		C909D6CF19439F96002272AC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C909D6D019439FC5002272AC /* CDCrowdedView.h */,
+				C909D6D119439FC5002272AC /* CDCrowdedView.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,6 +341,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C909D6961943941A002272AC /* Edmondsans-Regular.otf in Resources */,
+				C909D6CD19439E45002272AC /* label_crowded.png in Resources */,
 				C909D6AD19439726002272AC /* unselected_me.png in Resources */,
 				C909D6C919439D67002272AC /* selected_tab.png in Resources */,
 				C909D6AF19439726002272AC /* unselected_more.png in Resources */,
@@ -350,6 +370,7 @@
 				C909D69C19439570002272AC /* Archer-Book-Pro.otf in Resources */,
 				C909D6AA19439726002272AC /* unselected_find@2x.png in Resources */,
 				C909D6C6194397DD002272AC /* selected_order@2x.png in Resources */,
+				C909D6CE19439E45002272AC /* label_crowded@2x.png in Resources */,
 				C909D6AE19439726002272AC /* unselected_me@2x.png in Resources */,
 				C909D66F19438C61002272AC /* Images.xcassets in Resources */,
 				C909D6951943941A002272AC /* Edmondsans-Medium.otf in Resources */,
@@ -371,6 +392,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C909D6D219439FC5002272AC /* CDCrowdedView.m in Sources */,
 				C909D66719438C61002272AC /* AppDelegate.m in Sources */,
 				C909D68619438D12002272AC /* CDVenueViewController.m in Sources */,
 				C909D66419438C61002272AC /* main.m in Sources */,
