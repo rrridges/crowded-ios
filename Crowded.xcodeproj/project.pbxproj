@@ -13,6 +13,15 @@
 		C909D66F19438C61002272AC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C909D66E19438C61002272AC /* Images.xcassets */; };
 		C909D67B19438C61002272AC /* CrowdedTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C909D67A19438C61002272AC /* CrowdedTests.m */; };
 		C909D68619438D12002272AC /* CDVenueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C909D68519438D12002272AC /* CDVenueViewController.m */; };
+		C909D68C19438EB1002272AC /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = C909D68A19438EB1002272AC /* background.png */; };
+		C909D68D19438EB1002272AC /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C909D68B19438EB1002272AC /* background@2x.png */; };
+		C909D6941943941A002272AC /* Edmondsans-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C909D6901943941A002272AC /* Edmondsans-Bold.otf */; };
+		C909D6951943941A002272AC /* Edmondsans-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = C909D6911943941A002272AC /* Edmondsans-Medium.otf */; };
+		C909D6961943941A002272AC /* Edmondsans-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = C909D6921943941A002272AC /* Edmondsans-Regular.otf */; };
+		C909D69B19439570002272AC /* Archer-Bold-Pro.otf in Resources */ = {isa = PBXBuildFile; fileRef = C909D69719439570002272AC /* Archer-Bold-Pro.otf */; };
+		C909D69C19439570002272AC /* Archer-Book-Pro.otf in Resources */ = {isa = PBXBuildFile; fileRef = C909D69819439570002272AC /* Archer-Book-Pro.otf */; };
+		C909D69D19439570002272AC /* Archer-Medium-Pro.otf in Resources */ = {isa = PBXBuildFile; fileRef = C909D69919439570002272AC /* Archer-Medium-Pro.otf */; };
+		C909D69E19439570002272AC /* Archer-Semibold-Pro.otf in Resources */ = {isa = PBXBuildFile; fileRef = C909D69A19439570002272AC /* Archer-Semibold-Pro.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +47,15 @@
 		C909D67A19438C61002272AC /* CrowdedTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CrowdedTests.m; sourceTree = "<group>"; };
 		C909D68419438D12002272AC /* CDVenueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDVenueViewController.h; sourceTree = "<group>"; };
 		C909D68519438D12002272AC /* CDVenueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDVenueViewController.m; sourceTree = "<group>"; };
+		C909D68A19438EB1002272AC /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		C909D68B19438EB1002272AC /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2x.png"; sourceTree = "<group>"; };
+		C909D6901943941A002272AC /* Edmondsans-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Edmondsans-Bold.otf"; sourceTree = "<group>"; };
+		C909D6911943941A002272AC /* Edmondsans-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Edmondsans-Medium.otf"; sourceTree = "<group>"; };
+		C909D6921943941A002272AC /* Edmondsans-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Edmondsans-Regular.otf"; sourceTree = "<group>"; };
+		C909D69719439570002272AC /* Archer-Bold-Pro.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Archer-Bold-Pro.otf"; sourceTree = "<group>"; };
+		C909D69819439570002272AC /* Archer-Book-Pro.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Archer-Book-Pro.otf"; sourceTree = "<group>"; };
+		C909D69919439570002272AC /* Archer-Medium-Pro.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Archer-Medium-Pro.otf"; sourceTree = "<group>"; };
+		C909D69A19439570002272AC /* Archer-Semibold-Pro.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Archer-Semibold-Pro.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +97,7 @@
 		C909D66019438C61002272AC /* Crowded */ = {
 			isa = PBXGroup;
 			children = (
+				C909D68819438E9A002272AC /* Resources */,
 				C909D68719438D83002272AC /* ViewControllers */,
 				C909D66519438C61002272AC /* AppDelegate.h */,
 				C909D66619438C61002272AC /* AppDelegate.m */,
@@ -122,6 +141,38 @@
 				C909D68519438D12002272AC /* CDVenueViewController.m */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		C909D68819438E9A002272AC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C909D68E19439411002272AC /* Fonts */,
+				C909D68919438EA3002272AC /* Images */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		C909D68919438EA3002272AC /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				C909D68A19438EB1002272AC /* background.png */,
+				C909D68B19438EB1002272AC /* background@2x.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		C909D68E19439411002272AC /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C909D69719439570002272AC /* Archer-Bold-Pro.otf */,
+				C909D69819439570002272AC /* Archer-Book-Pro.otf */,
+				C909D69919439570002272AC /* Archer-Medium-Pro.otf */,
+				C909D69A19439570002272AC /* Archer-Semibold-Pro.otf */,
+				C909D6901943941A002272AC /* Edmondsans-Bold.otf */,
+				C909D6911943941A002272AC /* Edmondsans-Medium.otf */,
+				C909D6921943941A002272AC /* Edmondsans-Regular.otf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,8 +255,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C909D6961943941A002272AC /* Edmondsans-Regular.otf in Resources */,
+				C909D69D19439570002272AC /* Archer-Medium-Pro.otf in Resources */,
+				C909D6941943941A002272AC /* Edmondsans-Bold.otf in Resources */,
+				C909D69E19439570002272AC /* Archer-Semibold-Pro.otf in Resources */,
 				C909D66D19438C61002272AC /* Main.storyboard in Resources */,
+				C909D69B19439570002272AC /* Archer-Bold-Pro.otf in Resources */,
+				C909D68C19438EB1002272AC /* background.png in Resources */,
+				C909D68D19438EB1002272AC /* background@2x.png in Resources */,
+				C909D69C19439570002272AC /* Archer-Book-Pro.otf in Resources */,
 				C909D66F19438C61002272AC /* Images.xcassets in Resources */,
+				C909D6951943941A002272AC /* Edmondsans-Medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

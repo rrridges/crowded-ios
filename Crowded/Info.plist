@@ -28,5 +28,17 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Edmondsans-Bold.otf</string>
+		<string>Edmondsans-Medium.otf</string>
+		<string>Edmondsans-Regular.otf</string>
+		<string>Archer-Bold-Pro.otf</string>
+		<string>Archer-Book-Pro.otf</string>
+		<string>Archer-Medium-Pro.otf</string>
+		<string>Archer-Semibold-Pro.otf</string>
+	</array>
 </dict>
 </plist>
