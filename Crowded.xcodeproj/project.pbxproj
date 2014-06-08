@@ -63,10 +63,10 @@
 		C909D6F61943F642002272AC /* CDNowTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C909D6F51943F642002272AC /* CDNowTableViewCell.m */; };
 		C909D6F9194409FA002272AC /* arrow_forward.png in Resources */ = {isa = PBXBuildFile; fileRef = C909D6F7194409FA002272AC /* arrow_forward.png */; };
 		C909D6FA194409FA002272AC /* arrow_forward@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C909D6F8194409FA002272AC /* arrow_forward@2x.png */; };
+		C96FA858194498AE00446D29 /* popup_success.png in Resources */ = {isa = PBXBuildFile; fileRef = C96FA856194498AE00446D29 /* popup_success.png */; };
+		C96FA859194498AE00446D29 /* popup_success@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C96FA857194498AE00446D29 /* popup_success@2x.png */; };
 		C97619AE1944364900572888 /* button_complete_order@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C97619AC1944364900572888 /* button_complete_order@2x.png */; };
 		C97619AF1944364900572888 /* button_complete_order.png in Resources */ = {isa = PBXBuildFile; fileRef = C97619AD1944364900572888 /* button_complete_order.png */; };
-		C97619B219443C3500572888 /* popup_success.png in Resources */ = {isa = PBXBuildFile; fileRef = C97619B019443C3500572888 /* popup_success.png */; };
-		C97619B319443C3500572888 /* popup_success@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C97619B119443C3500572888 /* popup_success@2x.png */; };
 		C97619B919444DD700572888 /* CDOrderQueueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C97619B819444DD700572888 /* CDOrderQueueViewController.m */; };
 		C97619BE19444FC600572888 /* status_done.png in Resources */ = {isa = PBXBuildFile; fileRef = C97619BA19444FC600572888 /* status_done.png */; };
 		C97619BF19444FC600572888 /* status_done@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C97619BB19444FC600572888 /* status_done@2x.png */; };
@@ -92,6 +92,8 @@
 		C97619E81944753000572888 /* CDMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C97619E71944753000572888 /* CDMeViewController.m */; };
 		C97619EB1944753F00572888 /* CDFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C97619EA1944753F00572888 /* CDFriendsViewController.m */; };
 		C97619EE1944754F00572888 /* CDFindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C97619ED1944754F00572888 /* CDFindViewController.m */; };
+		C97619F11944903600572888 /* CDBarTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C97619F01944903600572888 /* CDBarTabViewController.m */; };
+		C97619F41944917200572888 /* CDBarTabTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C97619F31944917200572888 /* CDBarTabTableViewCell.m */; };
 		C9CAA17B1944161200B4ED18 /* CDMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9CAA17A1944161200B4ED18 /* CDMenuViewController.m */; };
 		C9CAA17E19441C2E00B4ED18 /* CDMenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9CAA17D19441C2E00B4ED18 /* CDMenuTableViewCell.m */; };
 		C9CAA1811944219A00B4ED18 /* CDOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9CAA1801944219A00B4ED18 /* CDOrderViewController.m */; };
@@ -183,10 +185,10 @@
 		C909D6F51943F642002272AC /* CDNowTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDNowTableViewCell.m; sourceTree = "<group>"; };
 		C909D6F7194409FA002272AC /* arrow_forward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_forward.png; sourceTree = "<group>"; };
 		C909D6F8194409FA002272AC /* arrow_forward@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_forward@2x.png"; sourceTree = "<group>"; };
+		C96FA856194498AE00446D29 /* popup_success.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = popup_success.png; sourceTree = "<group>"; };
+		C96FA857194498AE00446D29 /* popup_success@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "popup_success@2x.png"; sourceTree = "<group>"; };
 		C97619AC1944364900572888 /* button_complete_order@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_complete_order@2x.png"; sourceTree = "<group>"; };
 		C97619AD1944364900572888 /* button_complete_order.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_complete_order.png; sourceTree = "<group>"; };
-		C97619B019443C3500572888 /* popup_success.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = popup_success.png; sourceTree = "<group>"; };
-		C97619B119443C3500572888 /* popup_success@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "popup_success@2x.png"; sourceTree = "<group>"; };
 		C97619B719444DD700572888 /* CDOrderQueueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDOrderQueueViewController.h; sourceTree = "<group>"; };
 		C97619B819444DD700572888 /* CDOrderQueueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDOrderQueueViewController.m; sourceTree = "<group>"; };
 		C97619BA19444FC600572888 /* status_done.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = status_done.png; sourceTree = "<group>"; };
@@ -218,6 +220,10 @@
 		C97619EA1944753F00572888 /* CDFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDFriendsViewController.m; sourceTree = "<group>"; };
 		C97619EC1944754F00572888 /* CDFindViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDFindViewController.h; sourceTree = "<group>"; };
 		C97619ED1944754F00572888 /* CDFindViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDFindViewController.m; sourceTree = "<group>"; };
+		C97619EF1944903600572888 /* CDBarTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDBarTabViewController.h; sourceTree = "<group>"; };
+		C97619F01944903600572888 /* CDBarTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDBarTabViewController.m; sourceTree = "<group>"; };
+		C97619F21944917200572888 /* CDBarTabTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDBarTabTableViewCell.h; sourceTree = "<group>"; };
+		C97619F31944917200572888 /* CDBarTabTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDBarTabTableViewCell.m; sourceTree = "<group>"; };
 		C9CAA1791944161200B4ED18 /* CDMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMenuViewController.h; sourceTree = "<group>"; };
 		C9CAA17A1944161200B4ED18 /* CDMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMenuViewController.m; sourceTree = "<group>"; };
 		C9CAA17C19441C2E00B4ED18 /* CDMenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMenuTableViewCell.h; sourceTree = "<group>"; };
@@ -344,6 +350,8 @@
 				C97619EA1944753F00572888 /* CDFriendsViewController.m */,
 				C97619EC1944754F00572888 /* CDFindViewController.h */,
 				C97619ED1944754F00572888 /* CDFindViewController.m */,
+				C97619EF1944903600572888 /* CDBarTabViewController.h */,
+				C97619F01944903600572888 /* CDBarTabViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -360,6 +368,8 @@
 		C909D68919438EA3002272AC /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C96FA856194498AE00446D29 /* popup_success.png */,
+				C96FA857194498AE00446D29 /* popup_success@2x.png */,
 				C97619E4194473E500572888 /* Crowded_Find_1.png */,
 				C97619E2194473C100572888 /* Crowded_Me@2x.png */,
 				C97619E0194473AA00572888 /* Crowded_Friends@2x.png */,
@@ -379,8 +389,6 @@
 				C97619BB19444FC600572888 /* status_done@2x.png */,
 				C97619BC19444FC600572888 /* status_in_line.png */,
 				C97619BD19444FC600572888 /* status_in_line@2x.png */,
-				C97619B019443C3500572888 /* popup_success.png */,
-				C97619B119443C3500572888 /* popup_success@2x.png */,
 				C97619AC1944364900572888 /* button_complete_order@2x.png */,
 				C97619AD1944364900572888 /* button_complete_order.png */,
 				C9CAA1851944346200B4ED18 /* arrow_aqua@2x.png */,
@@ -448,6 +456,8 @@
 				C9CAA17D19441C2E00B4ED18 /* CDMenuTableViewCell.m */,
 				C97619C5194452E000572888 /* CDOrderQueueTableViewCell.h */,
 				C97619C6194452E000572888 /* CDOrderQueueTableViewCell.m */,
+				C97619F21944917200572888 /* CDBarTabTableViewCell.h */,
+				C97619F31944917200572888 /* CDBarTabTableViewCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -570,6 +580,7 @@
 				C97619CA1944534D00572888 /* photo_1.png in Resources */,
 				C909D6961943941A002272AC /* Edmondsans-Regular.otf in Resources */,
 				C909D6CD19439E45002272AC /* label_crowded.png in Resources */,
+				C96FA859194498AE00446D29 /* popup_success@2x.png in Resources */,
 				C909D6AD19439726002272AC /* unselected_me.png in Resources */,
 				C909D6D51943A6D5002272AC /* atwoods.png in Resources */,
 				C97619AF1944364900572888 /* button_complete_order.png in Resources */,
@@ -587,6 +598,7 @@
 				C909D6C3194397DD002272AC /* selected_more.png in Resources */,
 				C97619C119444FC600572888 /* status_in_line@2x.png in Resources */,
 				C909D6AC19439726002272AC /* unselected_friends@2x.png in Resources */,
+				C96FA858194498AE00446D29 /* popup_success.png in Resources */,
 				C909D69E19439570002272AC /* Archer-Semibold-Pro.otf in Resources */,
 				C909D66D19438C61002272AC /* Main.storyboard in Resources */,
 				C97619AE1944364900572888 /* button_complete_order@2x.png in Resources */,
@@ -611,7 +623,6 @@
 				C909D68C19438EB1002272AC /* background.png in Resources */,
 				C97619CB1944534D00572888 /* photo_1@2x.png in Resources */,
 				C909D6FA194409FA002272AC /* arrow_forward@2x.png in Resources */,
-				C97619B219443C3500572888 /* popup_success.png in Resources */,
 				C97619BF19444FC600572888 /* status_done@2x.png in Resources */,
 				C909D68D19438EB1002272AC /* background@2x.png in Resources */,
 				C909D6C1194397DD002272AC /* selected_me.png in Resources */,
@@ -628,7 +639,6 @@
 				C909D6AE19439726002272AC /* unselected_me@2x.png in Resources */,
 				C909D66F19438C61002272AC /* Images.xcassets in Resources */,
 				C97619DD1944694200572888 /* photo_5@2x.png in Resources */,
-				C97619B319443C3500572888 /* popup_success@2x.png in Resources */,
 				C909D6951943941A002272AC /* Edmondsans-Medium.otf in Resources */,
 				C909D6C5194397DD002272AC /* selected_order.png in Resources */,
 			);
@@ -688,6 +698,7 @@
 				C909D6D219439FC5002272AC /* CDCrowdedView.m in Sources */,
 				C97619C7194452E000572888 /* CDOrderQueueTableViewCell.m in Sources */,
 				C909D6EC1943CD56002272AC /* CDBeaconManager.m in Sources */,
+				C97619F11944903600572888 /* CDBarTabViewController.m in Sources */,
 				C9CAA17B1944161200B4ED18 /* CDMenuViewController.m in Sources */,
 				C9CAA184194422B300B4ED18 /* CDWebService.m in Sources */,
 				C909D6E91943C261002272AC /* NSString+CrowdLevel.m in Sources */,
@@ -702,6 +713,7 @@
 				C97619EB1944753F00572888 /* CDFriendsViewController.m in Sources */,
 				C97619B919444DD700572888 /* CDOrderQueueViewController.m in Sources */,
 				C909D66419438C61002272AC /* main.m in Sources */,
+				C97619F41944917200572888 /* CDBarTabTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

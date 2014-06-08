@@ -131,14 +131,16 @@
             order.readyTimestamp = [self dateFromString:orderJson[@"readyTimestamp"]];
             order.creationTimestamp = [self dateFromString:orderJson[@"creationTimestamp"]];
             order.orderId = orderJson[@"_id"];
+            order.userId = orderJson[@"user_id"];
         
             [orders addObject:order];
         }
     }
     
     NSSortDescriptor *creation = [[NSSortDescriptor alloc] initWithKey:@"creationTimestamp" ascending:YES];
-    NSSortDescriptor *ready = [[NSSortDescriptor alloc] initWithKey:@"readyTimestamp" ascending:YES];
-    [orders sortUsingDescriptors:@[ready, creation]];
+    NSSortDescriptor *readyTime = [[NSSortDescriptor alloc] initWithKey:@"readyTimestamp" ascending:YES];
+    NSSortDescriptor *ready = [[NSSortDescriptor alloc] initWithKey:@"ready" ascending:NO];
+    [orders sortUsingDescriptors:@[ready, readyTime, creation]];
     return orders;
 }
 

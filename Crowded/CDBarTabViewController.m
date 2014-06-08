@@ -1,25 +1,25 @@
 //
-//  CDOrderQueueViewController.m
+//  CDBarTabViewController.m
 //  Crowded
 //
 //  Created by Matt Bridges on 6/8/14.
 //  Copyright (c) 2014 Intrepid. All rights reserved.
 //
 
-#import "CDOrderQueueViewController.h"
-#import "CDOrder.h"
-#import "CDOrderQueueTableViewCell.h"
-#import "Common.h"
+#import "CDBarTabViewController.h"
 #import "CDWebService.h"
+#import "CDOrder.h"
+#import "CDBarTabTableViewCell.h"
+#import "Common.h"
 #import <SVProgressHUD/SVProgressHUD.h>
 
-@interface CDOrderQueueViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface CDBarTabViewController ()
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) NSArray *orders;
 @property (nonatomic) CDWebService *webService;
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @end
 
-@implementation CDOrderQueueViewController
+@implementation CDBarTabViewController
 
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,28 +35,36 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.navigationItem.title = @"Order Queue";
+    self.navigationItem.title = @"My Tab";
     self.webService = [[CDWebService alloc] init];
+    
     [self doPoll];
 }
 
-#warning TODO: Prune to at most 3 ready orders.
 - (void)doPoll {
-    __weak CDOrderQueueViewController *weakSelf = self;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        NSLog(@"Polling from %p", self);
-        [weakSelf.webService getOrdersForVenue:@"0" completion:^(NSError *error, id result) {
-            if (!error && [result isKindOfClass:[NSArray class]] && [weakSelf ordersAreNew:result]) {
-                weakSelf.orders = result;
-                [weakSelf.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
+        NSLog(@"Polling Tab");
+        [self.webService getOrdersForVenue:@"0" completion:^(NSError *error, id result) {
+            if (!error && [result isKindOfClass:[NSArray class]] ) {
+                
+                NSArray *filtered = [result filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
+                    if ([evaluatedObject isKindOfClass:[CDOrder class]]) {
+                        CDOrder *order = evaluatedObject;
+                        return [order.userId isEqualToString:@"0"];
+                    } else {
+                        return false;
+                    }
+                }]];
+                
+                if ([self ordersAreNew:filtered]) {
+                    self.orders = filtered;
+                    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
+                }
                 
             }
             
-#warning Can't seem to get this VC to dealloc with the __weak above. Workaround by checking if view is on screen.
-            if (self.view.window) {
-                [self doPoll];
-            }
-
+            [self doPoll];
+            
         }];
     });
 }
@@ -65,7 +73,11 @@
     for (int i = 0; i < MIN(self.orders.count, orders.count); i++) {
         CDOrder *left = orders[i];
         CDOrder *right = self.orders[i];
-        if (![left.orderId isEqualToString:right.orderId] || left.ready != right.ready) {
+        if (![left.orderId isEqualToString:right.orderId]) {
+            return YES;
+        }
+        if (left.ready != right.ready && left.ready) {
+            self.navigationController.tabBarItem.badgeValue = @"1";
             return YES;
         }
     }
@@ -73,39 +85,29 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    self.navigationController.tabBarItem.badgeValue = nil;
     [SVProgressHUD show];
     [self.webService getOrdersForVenue:@"0" completion:^(NSError *error, id result) {
         if (!error && [result isKindOfClass:[NSArray class]]) {
             [SVProgressHUD dismiss];
-            self.orders = result;
+
+            NSArray *filtered = [result filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
+                if ([evaluatedObject isKindOfClass:[CDOrder class]]) {
+                    CDOrder *order = evaluatedObject;
+                    return [order.userId isEqualToString:@"0"];
+                } else {
+                    return false;
+                }
+            }]];
+            
+            self.orders = filtered;
             [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
+            
+        
         } else {
             [SVProgressHUD showErrorWithStatus:@"Oops! Something went wrong."];
         }
     }];
-}
-
-- (NSArray *)dummyOrders {
-    NSMutableArray *orders = [NSMutableArray array];
-    
-    for (int i = 0; i < 8; i++) {
-        CDOrder *order = [[CDOrder alloc] init];
-        order.userName = @"Matt B.";
-        order.itemName = @"SMUTTYNOSE BROWN DOG ALE";
-        order.userImage = @"photo_1.png";
-        order.creationTimestamp = [NSDate date];
-        order.readyTimestamp = [NSDate date];
-        order.ready = NO;
-        [orders addObject:order ];
-    }
-
-    return orders;
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -117,25 +119,28 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CDOrderQueueTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"orderQueueCell" forIndexPath:indexPath];
+    CDBarTabTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"barTabCell" forIndexPath:indexPath];
     CDOrder *order = self.orders[indexPath.row];
     [self configureCell:cell withOrder:order];
     return cell;
 }
 
-- (void)configureCell:(CDOrderQueueTableViewCell *)cell withOrder:(CDOrder *)order {
-    cell.userNameLabel.text = order.userName;
+- (void)configureCell:(CDBarTabTableViewCell *)cell withOrder:(CDOrder *)order {
     cell.itemNameLabel.text = [order.itemName capitalizedString];
+#warning TODO: set price label text
     if (order.ready) {
         cell.statusImageView.image = [UIImage imageNamed:@"status_done.png"];
         cell.containerView.layer.borderColor = UIColorFromRGB(0xDD6342).CGColor;
-        cell.userNameLabel.textColor = UIColorFromRGB(0xDD6342);
     } else {
         cell.statusImageView.image = [UIImage imageNamed:@"status_in_line.png"];
         cell.containerView.layer.borderColor = UIColorFromRGB(0x4A7EC5).CGColor;
-        cell.userNameLabel.textColor = UIColorFromRGB(0x4A7EC5);
     }
-    cell.avatarImageView.image = [UIImage imageNamed:order.userImage];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 /*
