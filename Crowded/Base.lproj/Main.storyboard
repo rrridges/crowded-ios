@@ -626,19 +626,99 @@
             </objects>
             <point key="canvasLocation" x="-111" y="1475"/>
         </scene>
-        <!--Navigation Controller - Order-->
+        <!--Navigation Controller - Queue-->
         <scene sceneID="VrX-5D-T1a">
             <objects>
                 <navigationController id="1sE-KD-So1" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Order" image="unselected_order.png" id="aRq-T8-nPf"/>
+                    <tabBarItem key="tabBarItem" title="Queue" image="unselected_order.png" id="aRq-T8-nPf"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="kIx-6z-ZcG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <connections>
+                        <segue destination="jZ0-pv-Roq" kind="relationship" relationship="rootViewController" id="rDz-IS-nf2"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W1P-XF-7Yh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-111" y="2103"/>
+        </scene>
+        <!--Order Queue View Controller-->
+        <scene sceneID="JGB-1o-a8L">
+            <objects>
+                <viewController id="jZ0-pv-Roq" customClass="CDOrderQueueViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vIg-w6-zSh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background.png" id="zoy-wm-JaZ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="82" sectionHeaderHeight="22" sectionFooterHeight="22" id="wUX-tm-5ab">
+                                <rect key="frame" x="0.0" y="62" width="320" height="457"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="orderQueueCell" id="z3d-Lq-xZ7" customClass="CDOrderQueueTableViewCell">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z3d-Lq-xZ7" id="uRU-A6-uba">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" id="CcA-DX-70O" customClass="CDBorderedView">
+                                                    <rect key="frame" x="9" y="12" width="302" height="70"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <subviews>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Matt B." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZPZ-sx-Rdh">
+                                                            <rect key="frame" x="78" y="15" width="146" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="Edmondsans-Bold" family="Edmondsans" pointSize="14"/>
+                                                            <color key="textColor" red="0.29019607843137252" green="0.49411764705882355" blue="0.77254901960784317" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bud Light" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ev1-lA-N6g">
+                                                            <rect key="frame" x="78" y="33" width="146" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="Edmondsans-Regular" family="Edmondsans" pointSize="14"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="status_in_line.png" id="uhX-xJ-DcD">
+                                                            <rect key="frame" x="232" y="0.0" width="70" height="70"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        </imageView>
+                                                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo_1.png" id="o5C-v2-pOM">
+                                                            <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.098039215690000001" green="0.1058823529" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
+                                                </view>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="avatarImageView" destination="o5C-v2-pOM" id="Kfs-a9-w0Z"/>
+                                            <outlet property="containerView" destination="CcA-DX-70O" id="v9e-QM-RPD"/>
+                                            <outlet property="itemNameLabel" destination="ev1-lA-N6g" id="22u-AV-WAT"/>
+                                            <outlet property="statusImageView" destination="uhX-xJ-DcD" id="Tkw-jH-QRP"/>
+                                            <outlet property="userNameLabel" destination="ZPZ-sx-Rdh" id="xEO-gF-h11"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="jZ0-pv-Roq" id="nhn-dI-R4t"/>
+                                    <outlet property="delegate" destination="jZ0-pv-Roq" id="dTm-O0-fSz"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ft4-Kw-ind"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zg2-dx-aZm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="274" y="2103"/>
         </scene>
         <!--Navigation Controller - Me-->
         <scene sceneID="vHG-gD-oGK">
@@ -663,7 +743,9 @@
         <image name="background.png" width="320" height="568"/>
         <image name="button_complete_order.png" width="301" height="50"/>
         <image name="label_crowded.png" width="227" height="47"/>
+        <image name="photo_1.png" width="39" height="39"/>
         <image name="popup_success.png" width="264" height="291"/>
+        <image name="status_in_line.png" width="36" height="36"/>
         <image name="unselected_find.png" width="35" height="35"/>
         <image name="unselected_friends.png" width="35" height="35"/>
         <image name="unselected_me.png" width="35" height="35"/>

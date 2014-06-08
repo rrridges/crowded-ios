@@ -147,7 +147,7 @@ NSString * const kCDBeaconManagerVenueChangedNotification = @"kCDBeaconManagerVe
                     venue.address1 = @"187 Cambridge Street";
                     venue.address2 = @"Cambridge, MA 02139";
                     venue.name = venueDictionary[@"name"];
-                    venue.crowdLevel = 2;
+                    venue.crowdLevel = [venueDictionary[@"patronsCount"] intValue];
                     self.currentVenue = venue;
                     [[NSNotificationCenter defaultCenter] postNotificationName:kCDBeaconManagerVenueChangedNotification object:self];
                 }

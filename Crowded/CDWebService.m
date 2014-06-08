@@ -70,6 +70,26 @@
             completion(connectionError, @false);
         }
     }];
-    
 }
+
+- (void)getOrdersForVenue:(NSString *)venueId completion:(CDCompletionBlock)completion {
+    NSURL *url = [NSURL URLWithString:@"http://crowded-api.herokuapp.com/addNewOrder"];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    [request setHTTPMethod:@"POST"];
+
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+        if (!connectionError && httpResponse.statusCode == 200) {
+            id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+            if ([json isKindOfClass:[NSDictionary class]]) {
+                completion(nil, json);
+            }
+        } else {
+            NSString *responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+            NSLog(@"Response: %@ Error: %@ StatusCode: %d", responseString, connectionError, httpResponse.statusCode);
+            completion(connectionError, nil);
+        }
+    }];
+}
+
 @end
