@@ -15,4 +15,5 @@
 @property (nonatomic) NSDate *creationTimestamp;
 @property (nonatomic) NSDate *readyTimestamp;
 @property (nonatomic) BOOL ready;
+@property (nonatomic) NSString *orderId;
 @end

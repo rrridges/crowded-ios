@@ -59,7 +59,7 @@
     [SVProgressHUD showWithStatus:@"Ordering"];
 
     CDWebService *service = [[CDWebService alloc] init];
-    [service placeOrderWithUserId:@"4" venueId:@"0" drinkName:self.menuItem.name completion:^(NSError *error, id result) {
+    [service placeOrderWithUserId:@"0" venueId:@"0" drinkName:self.menuItem.name completion:^(NSError *error, id result) {
         if ([result boolValue]) {
             [SVProgressHUD dismiss];
             self.successPopup.hidden = NO;

@@ -10,9 +10,13 @@
 #import "CDOrder.h"
 #import "CDOrderQueueTableViewCell.h"
 #import "Common.h"
+#import "CDWebService.h"
+#import <SVProgressHUD/SVProgressHUD.h>
 
 @interface CDOrderQueueViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic) NSArray *orders;
+@property (nonatomic) CDWebService *webService;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @end
 
 @implementation CDOrderQueueViewController
@@ -32,7 +36,48 @@
     // Do any additional setup after loading the view.
     
     self.navigationItem.title = @"Order Queue";
-    self.orders = [self dummyOrders];
+    self.webService = [[CDWebService alloc] init];
+}
+
+- (void)doPoll {
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        NSLog(@"Polling");
+        [self.webService getOrdersForVenue:@"0" completion:^(NSError *error, id result) {
+            if (!error && result && [self ordersAreNew:result]) {
+                self.orders = result;
+                [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
+                
+            }
+            
+            [self doPoll];
+        }];
+    });
+}
+
+- (BOOL)ordersAreNew:(NSArray *)orders {
+    for (int i = 0; i < MIN(self.orders.count, orders.count); i++) {
+        CDOrder *left = orders[i];
+        CDOrder *right = self.orders[i];
+        if (![left.orderId isEqualToString:right.orderId]) {
+            return YES;
+        }
+    }
+    return orders.count != self.orders.count;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [SVProgressHUD show];
+    
+    [self.webService getOrdersForVenue:@"0" completion:^(NSError *error, id result) {
+        if (!error && result) {
+            [SVProgressHUD dismiss];
+            self.orders = result;
+            [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
+        } else {
+            [SVProgressHUD showErrorWithStatus:@"Oops! Something went wrong."];
+        }
+        [self doPoll];
+    }];
 }
 
 - (NSArray *)dummyOrders {
@@ -48,7 +93,7 @@
         order.ready = NO;
         [orders addObject:order ];
     }
-    
+
     return orders;
 }
 
@@ -69,16 +114,13 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CDOrderQueueTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"orderQueueCell" forIndexPath:indexPath];
     CDOrder *order = self.orders[indexPath.row];
-    if (indexPath.row < 2) {
-        order.ready = YES;
-    }
     [self configureCell:cell withOrder:order];
     return cell;
 }
 
 - (void)configureCell:(CDOrderQueueTableViewCell *)cell withOrder:(CDOrder *)order {
     cell.userNameLabel.text = order.userName;
-    cell.itemNameLabel.text = order.itemName;
+    cell.itemNameLabel.text = [order.itemName capitalizedString];
     if (order.ready) {
         cell.statusImageView.image = [UIImage imageNamed:@"status_done.png"];
         cell.containerView.layer.borderColor = UIColorFromRGB(0xDD6342).CGColor;

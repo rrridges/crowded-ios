@@ -9,5 +9,7 @@
 #import "CDOrder.h"
 
 @implementation CDOrder
-
+- (NSString *)description {
+    return [NSString stringWithFormat:@"creation: %@, ready: %@", self.creationTimestamp, self.readyTimestamp];
+}
 @end

@@ -139,7 +139,7 @@ NSString * const kCDBeaconManagerVenueChangedNotification = @"kCDBeaconManagerVe
         self.currentVenue = nil;
         [[NSNotificationCenter defaultCenter] postNotificationName:kCDBeaconManagerVenueChangedNotification object:self];
     } else {
-        [self.webService patronArrivedWithId:@"4" atUUID:region.proximityUUID major:region.major.integerValue minor:region.minor.integerValue completion:^(NSError *error, id result) {
+        [self.webService patronArrivedWithId:@"0" atUUID:region.proximityUUID major:region.major.integerValue minor:region.minor.integerValue completion:^(NSError *error, id result) {
             @synchronized (self) {
                 if (self.operationCount == operationId && !error) {
                     NSDictionary *venueDictionary = (NSDictionary *)result;
