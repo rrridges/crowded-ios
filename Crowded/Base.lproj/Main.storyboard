@@ -36,7 +36,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="4Kg-xk-nTH" kind="relationship" relationship="rootViewController" id="zsO-px-K7b"/>
+                        <segue destination="4Kg-xk-nTH" kind="relationship" relationship="rootViewController" id="JRp-Rq-fLY"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wmi-bb-LyO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -224,12 +224,37 @@
                                 <rect key="frame" x="0.0" y="20" width="320" height="500"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <view contentMode="scaleToFill" id="yMV-UR-03d">
+                                <rect key="frame" x="0.0" y="-53" width="320" height="73"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bukowski Tavern" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MZ7-e1-P4k">
+                                        <rect key="frame" x="20" y="17" width="250" height="28"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Archer-Semibold" family="Archer" pointSize="24"/>
+                                        <color key="textColor" red="0.098039215686274508" green="0.10588235294117647" blue="0.12156862745098039" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1281 Cambridge St, Cambridge" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UgS-3A-sOy">
+                                        <rect key="frame" x="20" y="43" width="250" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Edmondsans-Medium" family="Edmondsans" pointSize="15"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_forward.png" id="yZq-Di-5tJ">
+                                        <rect key="frame" x="264" y="0.0" width="36" height="73"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <view contentMode="scaleToFill" id="21a-Gs-Ryh">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="20"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.8666666666666667" green="0.38823529411764707" blue="0.25882352941176467" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="67" sectionHeaderHeight="22" sectionFooterHeight="22" id="wuv-CC-IVg">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="70" sectionHeaderHeight="22" sectionFooterHeight="22" id="wuv-CC-IVg">
                                 <rect key="frame" x="0.0" y="20" width="320" height="500"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -240,7 +265,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" id="yth-9z-1jL" customClass="CDBorderedView">
-                                                    <rect key="frame" x="14" y="10" width="292" height="57"/>
+                                                    <rect key="frame" x="14" y="13" width="292" height="57"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wild boar bratwurst special at" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cwu-md-oNh">
@@ -288,7 +313,11 @@
                     <navigationItem key="navigationItem" id="tqs-p4-orH"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <segue destination="vXZ-lx-hvc" kind="push" identifier="venueSegue" id="IR6-So-Ir7"/>
+                        <outlet property="currentVenueAddressLabel" destination="UgS-3A-sOy" id="RtW-ok-JFp"/>
+                        <outlet property="currentVenueLabel" destination="MZ7-e1-P4k" id="Yo4-BP-eOO"/>
+                        <outlet property="headerView" destination="yMV-UR-03d" id="agz-Qe-mBc"/>
+                        <outlet property="tableView" destination="wuv-CC-IVg" id="sHh-tu-39l"/>
+                        <segue destination="vXZ-lx-hvc" kind="push" identifier="venueSegue" id="og5-dX-L1r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O8o-GH-EN6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -340,6 +369,7 @@
     </scenes>
     <resources>
         <image name="arrow_blue.png" width="9" height="16"/>
+        <image name="arrow_forward.png" width="12" height="20"/>
         <image name="atwoods.png" width="73" height="73"/>
         <image name="background.png" width="320" height="568"/>
         <image name="label_crowded.png" width="227" height="47"/>

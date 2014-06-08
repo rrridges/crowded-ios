@@ -140,7 +140,10 @@ NSString * const kCDBeaconManagerVenueChangedNotification = @"kCDBeaconManagerVe
             @synchronized (self) {
                 if (self.operationCount == operationId) {
                     CDVenue *venue = [[CDVenue alloc] init];
-                    venue.name = @"Atwoods";
+                    venue.address1 = @"187 Cambridge Street";
+                    venue.address2 = @"Cambridge, MA 02139";
+                    venue.name = @"Atwoods Tavern";
+                    venue.crowdLevel = 2;
                     self.currentVenue = venue;
                     [[NSNotificationCenter defaultCenter] postNotificationName:kCDBeaconManagerVenueChangedNotification object:self];
                 }

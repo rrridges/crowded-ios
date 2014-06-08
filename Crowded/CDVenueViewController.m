@@ -15,7 +15,6 @@
 #import "NSString+CrowdLevel.h"
 
 @interface CDVenueViewController ()
-@property (nonatomic) CDVenue *venue;
 @property (weak, nonatomic) IBOutlet UILabel *address1Label;
 @property (weak, nonatomic) IBOutlet UILabel *address2Label;
 @property (weak, nonatomic) IBOutlet CDCrowdedView *crowdedView;
@@ -40,16 +39,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self setupWithVenue:[self dummyVenue]];
+    if (!self.venue) {
+        self.venue = [self dummyVenue];
+    }
+    [self setupWithVenue:self.venue];
     [self setupWithSpecial:[self dummySpecial]];
     // Do any additional setup after loading the view.
 }
 
 - (CDVenue *) dummyVenue {
     CDVenue *venue = [[CDVenue alloc] init];
-    venue.address1 = @"222 Third Street";
-    venue.address2 = @"Cambridge, MA 02142";
-    venue.name = @"Intrepid Labs";
+    venue.address1 = @"187 Cambridge Street";
+    venue.address2 = @"Cambridge, MA 02139";
+    venue.name = @"Atwoods Tavern";
     venue.crowdLevel = 2;
     
     return venue;

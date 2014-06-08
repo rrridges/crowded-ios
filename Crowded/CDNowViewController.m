@@ -10,10 +10,18 @@
 #import "CDNowTableViewCell.h"
 #import "CDCrowdedView.h"
 #import "CDVenue.h"
+#import "CDBeaconManager.h"
+#import "CDVenueViewController.h"
 
 @interface CDNowViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic) NSArray *specials;
 @property (nonatomic) NSArray *venues;
+@property (nonatomic) CDVenue *headerVenue;
+@property (weak, nonatomic) IBOutlet UIView *headerView;
+@property (weak, nonatomic) IBOutlet UILabel *currentVenueLabel;
+@property (weak, nonatomic) IBOutlet UILabel *currentVenueAddressLabel;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic) CDVenue *selectedVenue;
 @end
 
 @implementation CDNowViewController
@@ -51,11 +59,19 @@
     [super viewDidLoad];
     self.specials = [self dummySpecials];
     self.venues = [self dummyVenues];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(venueChanged:) name:kCDBeaconManagerVenueChangedNotification object:nil];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(headerTapped)];
+    [self.headerView addGestureRecognizer:tap];
+    
     // Do any additional setup after loading the view.
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [self.navigationController setNavigationBarHidden:YES animated:YES];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -76,6 +92,13 @@
     return 1;
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"venueSegue"]) {
+        CDVenueViewController *vc = (CDVenueViewController *)segue.destinationViewController;
+        vc.venue = self.selectedVenue;
+    }
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CDNowTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NowCell" forIndexPath:indexPath];
     [self configureCell:cell forRow:indexPath.row];
@@ -90,6 +113,47 @@
     cell.specialLabel.text = special;
 }
 
+- (void)venueChanged:(NSNotification *)notification {
+    CDBeaconManager *manager = [notification object];
+    if (manager.currentVenue) {
+        CDVenue *venue = manager.currentVenue;
+        self.currentVenueLabel.text = venue.name;
+        self.currentVenueAddressLabel.text = venue.address1;
+        self.headerVenue = venue;
+        [self showHeaderView];
+    } else {
+        [self hideHeaderView];
+    }
+}
+
+- (void)showHeaderView {
+    [UIView animateWithDuration:0.3 animations:^{
+        CGRect frame = self.headerView.frame;
+        frame.origin.y = 20;
+        self.headerView.frame = frame;
+        frame = self.tableView.frame;
+        frame.origin.y = 20 + self.headerView.frame.size.height;
+        frame.size.height = 500 - self.headerView.frame.size.height;
+        self.tableView.frame = frame;
+    }];
+}
+
+- (void)hideHeaderView {
+    [UIView animateWithDuration:0.3 animations:^{
+        CGRect frame = self.headerView.frame;
+        frame.origin.y = -53;
+        self.headerView.frame = frame;
+        frame = self.tableView.frame;
+        frame.origin.y = 20;
+        frame.size.height = 500;
+        self.tableView.frame = frame;
+    }];
+}
+
+- (void)headerTapped {
+    self.selectedVenue = self.headerVenue;
+    [self performSegueWithIdentifier:@"venueSegue" sender:self];
+}
 /*
 #pragma mark - Navigation
 

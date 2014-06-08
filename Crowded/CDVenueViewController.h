@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+@class CDVenue;
 
 @interface CDVenueViewController : UIViewController
-
+@property (nonatomic) CDVenue *venue;
 @end

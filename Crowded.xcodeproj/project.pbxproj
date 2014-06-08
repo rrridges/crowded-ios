@@ -60,6 +60,8 @@
 		C909D6F01943D9AB002272AC /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C909D6EF1943D9AB002272AC /* CoreBluetooth.framework */; };
 		C909D6F31943F37E002272AC /* CDNowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C909D6F21943F37E002272AC /* CDNowViewController.m */; };
 		C909D6F61943F642002272AC /* CDNowTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C909D6F51943F642002272AC /* CDNowTableViewCell.m */; };
+		C909D6F9194409FA002272AC /* arrow_forward.png in Resources */ = {isa = PBXBuildFile; fileRef = C909D6F7194409FA002272AC /* arrow_forward.png */; };
+		C909D6FA194409FA002272AC /* arrow_forward@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C909D6F8194409FA002272AC /* arrow_forward@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,6 +143,8 @@
 		C909D6F21943F37E002272AC /* CDNowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDNowViewController.m; sourceTree = "<group>"; };
 		C909D6F41943F642002272AC /* CDNowTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDNowTableViewCell.h; sourceTree = "<group>"; };
 		C909D6F51943F642002272AC /* CDNowTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDNowTableViewCell.m; sourceTree = "<group>"; };
+		C909D6F7194409FA002272AC /* arrow_forward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_forward.png; sourceTree = "<group>"; };
+		C909D6F8194409FA002272AC /* arrow_forward@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_forward@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,6 +254,8 @@
 		C909D68919438EA3002272AC /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C909D6F7194409FA002272AC /* arrow_forward.png */,
+				C909D6F8194409FA002272AC /* arrow_forward@2x.png */,
 				C909D6E21943C160002272AC /* arrow_blue@2x.png */,
 				C909D6E31943C160002272AC /* arrow_blue.png */,
 				C909D6D31943A6D5002272AC /* atwoods.png */,
@@ -445,6 +451,7 @@
 				C909D6B219439726002272AC /* unselected_order@2x.png in Resources */,
 				C909D6C2194397DD002272AC /* selected_me@2x.png in Resources */,
 				C909D68C19438EB1002272AC /* background.png in Resources */,
+				C909D6FA194409FA002272AC /* arrow_forward@2x.png in Resources */,
 				C909D68D19438EB1002272AC /* background@2x.png in Resources */,
 				C909D6C1194397DD002272AC /* selected_me.png in Resources */,
 				C909D6CA19439D67002272AC /* selected_tab@2x.png in Resources */,
@@ -453,6 +460,7 @@
 				C909D6C6194397DD002272AC /* selected_order@2x.png in Resources */,
 				C909D6D61943A6D5002272AC /* atwoods@2x.png in Resources */,
 				C909D6CE19439E45002272AC /* label_crowded@2x.png in Resources */,
+				C909D6F9194409FA002272AC /* arrow_forward.png in Resources */,
 				C909D6AE19439726002272AC /* unselected_me@2x.png in Resources */,
 				C909D66F19438C61002272AC /* Images.xcassets in Resources */,
 				C909D6951943941A002272AC /* Edmondsans-Medium.otf in Resources */,
