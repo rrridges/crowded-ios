@@ -11,6 +11,8 @@
 #import <SVProgressHUD/SVProgressHUD.h>
 #import "CDWebService.h"
 
+NSString * const kCDOrderPlacedNotification = @"kCDOrderPlacedNotification";
+
 @interface CDOrderViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *itemNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *itemDescriptionLabel;
@@ -57,10 +59,11 @@
 
 - (IBAction)completeOrderTapped:(id)sender {
     [SVProgressHUD showWithStatus:@"Ordering"];
-
+    
     CDWebService *service = [[CDWebService alloc] init];
     [service placeOrderWithUserId:@"0" venueId:@"0" drinkName:self.menuItem.name completion:^(NSError *error, id result) {
         if ([result boolValue]) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:kCDOrderPlacedNotification object:self];
             [SVProgressHUD dismiss];
             self.successPopup.hidden = NO;
         } else {

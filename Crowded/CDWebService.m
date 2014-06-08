@@ -25,11 +25,11 @@
                        @"2":@"Matt B.",
                        @"3": @"Alice C.",
                        @"4": @"Max M."};
-        self.images = @{@"0":@"photo_1.png",
-                        @"1":@"photo_2.png",
-                        @"2":@"photo_3.png",
-                        @"3":@"photo_4.png",
-                        @"4":@"photo_5.png"};
+        self.images = @{@"0":@"photo_4.png",
+                        @"1":@"photo_3.png",
+                        @"2":@"photo_1.png",
+                        @"3":@"photo_6.png",
+                        @"4":@"photo_2.png"};
     }
     return self;
 }
@@ -136,8 +136,8 @@
         }
     }
     
-    NSSortDescriptor *creation = [[NSSortDescriptor alloc] initWithKey:@"creationTimestamp" ascending:NO];
-    NSSortDescriptor *ready = [[NSSortDescriptor alloc] initWithKey:@"readyTimestamp" ascending:NO];
+    NSSortDescriptor *creation = [[NSSortDescriptor alloc] initWithKey:@"creationTimestamp" ascending:YES];
+    NSSortDescriptor *ready = [[NSSortDescriptor alloc] initWithKey:@"readyTimestamp" ascending:YES];
     [orders sortUsingDescriptors:@[ready, creation]];
     return orders;
 }

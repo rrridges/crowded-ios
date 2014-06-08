@@ -17,6 +17,7 @@
 @property (nonatomic) NSArray *orders;
 @property (nonatomic) CDWebService *webService;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (atomic) BOOL cancelPoll;
 @end
 
 @implementation CDOrderQueueViewController
@@ -37,6 +38,8 @@
     
     self.navigationItem.title = @"Order Queue";
     self.webService = [[CDWebService alloc] init];
+    self.navigationController.tabBarItem.badgeValue = nil;
+    [self doPoll];
 }
 
 - (void)doPoll {
@@ -48,8 +51,9 @@
                 [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
                 
             }
-            
+
             [self doPoll];
+
         }];
     });
 }
@@ -66,8 +70,9 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    [SVProgressHUD show];
     
+    [SVProgressHUD show];
+    self.cancelPoll = false;
     [self.webService getOrdersForVenue:@"0" completion:^(NSError *error, id result) {
         if (!error && result) {
             [SVProgressHUD dismiss];
@@ -76,9 +81,10 @@
         } else {
             [SVProgressHUD showErrorWithStatus:@"Oops! Something went wrong."];
         }
-        [self doPoll];
     }];
 }
+
+
 
 - (NSArray *)dummyOrders {
     NSMutableArray *orders = [NSMutableArray array];

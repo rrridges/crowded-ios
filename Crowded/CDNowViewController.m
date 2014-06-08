@@ -54,6 +54,16 @@
     return venues;
 }
 
+- (CDVenue *) dummyVenue {
+    CDVenue *venue = [[CDVenue alloc] init];
+    venue.address1 = @"187 Cambridge Street";
+    venue.address2 = @"Cambridge, MA 02139";
+    venue.name = @"Atwoods Tavern";
+    venue.crowdLevel = 2;
+    
+    return venue;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -104,6 +114,13 @@
     CDNowTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NowCell" forIndexPath:indexPath];
     [self configureCell:cell forRow:indexPath.row];
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == 0) {
+        self.selectedVenue = [self dummyVenue];
+        [self performSegueWithIdentifier:@"venueSegue" sender:self];
+    }
 }
 
 - (void)configureCell:(CDNowTableViewCell *)cell forRow:(NSUInteger)row {

@@ -27,6 +27,7 @@
     self.beaconManager = [[CDBeaconManager alloc] init];
     [self.beaconManager startMonitoring];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(beaconChanged:) name:kCDBeaconManagerVenueChangedNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(orderPlaced:) name:kCDOrderPlacedNotification object:nil];
     
 
     
@@ -92,6 +93,12 @@
         [[UIApplication sharedApplication] scheduleLocalNotification:notification];
     }
     
+}
+
+- (void)orderPlaced:(NSNotification *)notification {
+    UITabBarController *controller = (UITabBarController *)self.window.rootViewController;
+    UINavigationController *nav = (UINavigationController *)controller.viewControllers[3];
+    nav.tabBarItem.badgeValue = @"1";
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
