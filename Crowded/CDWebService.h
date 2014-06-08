@@ -15,5 +15,6 @@ typedef void (^CDCompletionBlock)(NSError *error, id result);
 - (void)patronArrivedWithId:(NSString *)userId atUUID:(NSUUID *)uuid major:(NSInteger)major minor:(NSInteger)minor completion:(CDCompletionBlock)completion;
 - (void)placeOrderWithUserId:(NSString *)userId venueId:(NSString *)venueId drinkName:(NSString *)drinkName completion:(CDCompletionBlock)completion;
 - (void)getOrdersForVenue:(NSString *)venueId completion:(CDCompletionBlock)completion;
+- (void)patronLeftWithId:(NSString *)userId completion:(CDCompletionBlock)completion;
 
 @end

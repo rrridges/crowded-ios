@@ -62,7 +62,7 @@
         } else {
             NSString *responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
             NSLog(@"Response: %@ Error: %@ StatusCode: %d", responseString, connectionError, httpResponse.statusCode);
-            completion(connectionError, nil);
+            completion(connectionError, false);
         }
     }];
 }
@@ -113,7 +113,7 @@
         } else {
             NSString *responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
             NSLog(@"Response: %@ Error: %@ StatusCode: %d", responseString, connectionError, httpResponse.statusCode);
-            completion(connectionError, nil);
+            completion(connectionError, @false);
         }
     }];
 }
@@ -154,6 +154,26 @@
     } else {
         return nil;
     }
+    
+}
+
+- (void)patronLeftWithId:(NSString *)userId completion:(CDCompletionBlock)completion {
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://crowded-api.herokuapp.com/removeVenuePatrons/%@", userId]];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    [request setHTTPMethod:@"DELETE"];
+    
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+        if (!connectionError && httpResponse.statusCode == 200) {
+            NSLog(@"Successfully left");
+            completion(nil, @true);
+        } else {
+            NSString *responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+            NSLog(@"Response: %@ Error: %@ StatusCode: %d", responseString, connectionError, httpResponse.statusCode);
+            completion(connectionError, @false);
+        }
+    }];
     
 }
 

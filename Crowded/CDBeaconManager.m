@@ -138,6 +138,9 @@ NSString * const kCDBeaconManagerVenueChangedNotification = @"kCDBeaconManagerVe
     if (!region) {
         self.currentVenue = nil;
         [[NSNotificationCenter defaultCenter] postNotificationName:kCDBeaconManagerVenueChangedNotification object:self];
+        [self.webService patronLeftWithId:@"0" completion:^(NSError *error, id result) {
+            
+        }];
     } else {
         [self.webService patronArrivedWithId:@"0" atUUID:region.proximityUUID major:region.major.integerValue minor:region.minor.integerValue completion:^(NSError *error, id result) {
             @synchronized (self) {
