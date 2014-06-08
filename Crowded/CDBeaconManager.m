@@ -10,6 +10,7 @@
 #import "CDVenue.h"
 #import <CoreLocation/CoreLocation.h>
 #import <CoreBluetooth/CoreBluetooth.h>
+#import "CDWebService.h"
 
 NSString * const kCDBeaconManagerVenueChangedNotification = @"kCDBeaconManagerVenueChangedNotification";
 
@@ -17,6 +18,7 @@ NSString * const kCDBeaconManagerVenueChangedNotification = @"kCDBeaconManagerVe
 @property (nonatomic) CLLocationManager *locationManager;
 @property (nonatomic) CBCentralManager *bluetoothManager;
 @property (nonatomic) CLBeaconRegion *region;
+@property (nonatomic) CDWebService *webService;
 @property (atomic) NSInteger operationCount;
 @end
 
@@ -28,6 +30,7 @@ NSString * const kCDBeaconManagerVenueChangedNotification = @"kCDBeaconManagerVe
         self.locationManager.delegate = self;
         self.bluetoothManager = [[CBCentralManager alloc] initWithDelegate:self queue:dispatch_get_main_queue()];
         self.bluetoothManager.delegate = self;
+        self.webService = [[CDWebService alloc] init];
     }
     return self;
 }
@@ -111,9 +114,9 @@ NSString * const kCDBeaconManagerVenueChangedNotification = @"kCDBeaconManagerVe
 }
 
 - (void)locationManager:(CLLocationManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region {
-    for (CLBeacon *beacon in beacons) {
-        //NSLog(@"Ranged a beacon at distance: %f", beacon.accuracy);
-    }
+//    for (CLBeacon *beacon in beacons) {
+//        //NSLog(@"Ranged a beacon at distance: %f", beacon.accuracy);
+//    }
 }
 
 - (void)locationManager:(CLLocationManager *)manager monitoringDidFailForRegion:(CLRegion *)region withError:(NSError *)error {
@@ -136,19 +139,24 @@ NSString * const kCDBeaconManagerVenueChangedNotification = @"kCDBeaconManagerVe
         self.currentVenue = nil;
         [[NSNotificationCenter defaultCenter] postNotificationName:kCDBeaconManagerVenueChangedNotification object:self];
     } else {
-        dispatch_async(dispatch_get_main_queue(), ^{
+        [self.webService patronArrivedWithId:@"4" atUUID:region.proximityUUID major:region.major.integerValue minor:region.minor.integerValue completion:^(NSError *error, id result) {
             @synchronized (self) {
-                if (self.operationCount == operationId) {
+                if (self.operationCount == operationId && !error) {
+                    NSDictionary *venueDictionary = (NSDictionary *)result;
                     CDVenue *venue = [[CDVenue alloc] init];
                     venue.address1 = @"187 Cambridge Street";
                     venue.address2 = @"Cambridge, MA 02139";
-                    venue.name = @"Atwoods Tavern";
+                    venue.name = venueDictionary[@"name"];
                     venue.crowdLevel = 2;
                     self.currentVenue = venue;
                     [[NSNotificationCenter defaultCenter] postNotificationName:kCDBeaconManagerVenueChangedNotification object:self];
                 }
             }
-        });
+        }];
+
+        
+
+    
     }
 }
 

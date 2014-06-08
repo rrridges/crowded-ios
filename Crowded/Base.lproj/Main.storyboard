@@ -295,6 +295,20 @@
             </objects>
             <point key="canvasLocation" x="1124" y="136"/>
         </scene>
+        <!--Order View Controller-->
+        <scene sceneID="YK8-UD-uNG">
+            <objects>
+                <viewController id="SD2-Yh-OG9" customClass="CDOrderViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gYI-HX-ZMC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ris-M4-REF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1536" y="136"/>
+        </scene>
         <!--Now View Controller-->
         <scene sceneID="dFO-uM-9ln">
             <objects>
