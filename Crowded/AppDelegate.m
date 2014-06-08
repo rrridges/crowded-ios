@@ -74,6 +74,10 @@
                                                          } forState:UIControlStateNormal];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     [[UITabBar appearance] setSelectionIndicatorImage:[UIImage imageNamed:@"selected_tab.png"]];
+    
+    [[UIBarButtonItem appearance] setTitleTextAttributes:@{NSFontAttributeName: [UIFont fontWithName:@"Edmondsans-Medium" size:15.0]
+                                                          
+                                                          } forState:UIControlStateNormal];
 }
 
 - (void)beaconChanged:(NSNotification *)notification {

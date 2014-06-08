@@ -62,6 +62,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(venueChanged:) name:kCDBeaconManagerVenueChangedNotification object:nil];
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(headerTapped)];
     [self.headerView addGestureRecognizer:tap];
+    self.navigationItem.title = @"Now";
     
     // Do any additional setup after loading the view.
 }
