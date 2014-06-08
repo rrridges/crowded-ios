@@ -43,7 +43,7 @@
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         NSLog(@"Polling");
         [self.webService getOrdersForVenue:@"0" completion:^(NSError *error, id result) {
-            if (!error && result && [self ordersAreNew:result]) {
+            if (!error && [result isKindOfClass:[NSArray class]] && [self ordersAreNew:result]) {
                 self.orders = result;
                 [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
                 

@@ -52,10 +52,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <connections>
+                        <segue destination="JAX-3u-ox7" kind="relationship" relationship="rootViewController" id="Agg-QZ-6Gd"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fds-HL-5Is" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-111" y="848"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ZaG-fK-ENL">
+            <objects>
+                <viewController id="JAX-3u-ox7" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cbr-Js-PJZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Crowded_Find_1.png" id="iph-7k-17V">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="BuX-Y1-u19"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ECv-Yv-HfR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="302" y="848"/>
         </scene>
         <!--Venue View Controller-->
         <scene sceneID="ufC-wZ-h7g">
@@ -621,10 +645,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <connections>
+                        <segue destination="pDE-1I-bKb" kind="relationship" relationship="rootViewController" id="r7S-Ey-eUY"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wLN-2R-Oz8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-111" y="1475"/>
+        </scene>
+        <!--Friends View Controller-->
+        <scene sceneID="omR-3E-YjT">
+            <objects>
+                <viewController id="pDE-1I-bKb" customClass="CDFriendsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SNy-Ce-rLn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Crowded_Friends.png" id="9Jy-PL-LDI">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="6gm-mo-De2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cpe-qH-4Cf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="302" y="1475"/>
         </scene>
         <!--Navigation Controller - Queue-->
         <scene sceneID="VrX-5D-T1a">
@@ -732,13 +780,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <connections>
+                        <segue destination="bLZ-0t-9YZ" kind="relationship" relationship="rootViewController" id="PkX-5l-Ey5"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lFf-E1-vA2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-111" y="2728"/>
         </scene>
+        <!--Me View Controller-->
+        <scene sceneID="0mz-jJ-WpG">
+            <objects>
+                <viewController id="bLZ-0t-9YZ" customClass="CDMeViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4vS-nD-BDd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Crowded_Me.png" id="Zly-Jl-YN9">
+                                <rect key="frame" x="0.0" y="-1" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="oDp-eG-fab"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SjB-Cx-ZzJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="274" y="2728"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="Crowded_Find_1.png" width="640" height="1136"/>
+        <image name="Crowded_Friends.png" width="320" height="568"/>
+        <image name="Crowded_Me.png" width="320" height="568"/>
         <image name="arrow_aqua.png" width="9" height="16"/>
         <image name="arrow_blue.png" width="9" height="16"/>
         <image name="arrow_forward.png" width="12" height="20"/>
