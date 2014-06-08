@@ -54,14 +54,18 @@ NSString * const kCDOrderPlacedNotification = @"kCDOrderPlacedNotification";
     self.taxLabel.text = [NSString stringWithFormat:@"$%0.2f", tax];
     self.tipLabel.text = [NSString stringWithFormat:@"$%0.2f", tip];
     self.totalLabel.text = [NSString stringWithFormat:@"$%0.2f", tax + tip + price.doubleValue];
-    
 }
 
 - (IBAction)completeOrderTapped:(id)sender {
     [SVProgressHUD showWithStatus:@"Ordering"];
     
     CDWebService *service = [[CDWebService alloc] init];
-    [service placeOrderWithUserId:@"0" venueId:@"0" drinkName:self.menuItem.name completion:^(NSError *error, id result) {
+    NSDecimalNumber *price = self.menuItem.price;
+    double tax = price.doubleValue * 0.05;
+    double tip = price.doubleValue * 0.2;
+    NSString *total = [NSString stringWithFormat:@"$%0.2f", tax + tip + price.doubleValue];
+    
+    [service placeOrderWithUserId:@"0" venueId:@"0" drinkName:self.menuItem.name price:total completion:^(NSError *error, id result) {
         if ([result boolValue]) {
             [[NSNotificationCenter defaultCenter] postNotificationName:kCDOrderPlacedNotification object:self];
             [SVProgressHUD dismiss];

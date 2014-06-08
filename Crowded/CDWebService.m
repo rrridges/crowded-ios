@@ -67,7 +67,7 @@
     }];
 }
 
-- (void)placeOrderWithUserId:(NSString *)userId venueId:(NSString *)venueId drinkName:(NSString *)drinkName completion:(CDCompletionBlock)completion{
+- (void)placeOrderWithUserId:(NSString *)userId venueId:(NSString *)venueId drinkName:(NSString *)drinkName price:(NSString *)price completion:(CDCompletionBlock)completion{
     NSURL *url = [NSURL URLWithString:@"http://crowded-api.herokuapp.com/addNewOrder"];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     [request setHTTPMethod:@"POST"];
@@ -78,6 +78,7 @@
     payload[@"venue_id"] = venueId;
     payload[@"drinkName"] = drinkName;
     payload[@"specialInstructions"] = @"";
+    payload[@"price"] = price;
     
     NSData *body = [NSJSONSerialization dataWithJSONObject:payload options:0 error:nil];
     NSString *bodyString = [[NSString alloc] initWithData:body encoding:NSUTF8StringEncoding];
@@ -132,6 +133,7 @@
             order.creationTimestamp = [self dateFromString:orderJson[@"creationTimestamp"]];
             order.orderId = orderJson[@"_id"];
             order.userId = orderJson[@"user_id"];
+            order.price = orderJson[@"price"];
         
             [orders addObject:order];
         }

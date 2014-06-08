@@ -127,7 +127,9 @@
 
 - (void)configureCell:(CDBarTabTableViewCell *)cell withOrder:(CDOrder *)order {
     cell.itemNameLabel.text = [order.itemName capitalizedString];
-#warning TODO: set price label text
+    if (order.price) {
+        cell.priceLabel.text = order.price;
+    }
     if (order.ready) {
         cell.statusImageView.image = [UIImage imageNamed:@"status_done.png"];
         cell.containerView.layer.borderColor = UIColorFromRGB(0xDD6342).CGColor;

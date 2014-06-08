@@ -17,4 +17,5 @@
 @property (nonatomic) BOOL ready;
 @property (nonatomic) NSString *orderId;
 @property (nonatomic) NSString *userId;
+@property (nonatomic) NSString *price;
 @end
