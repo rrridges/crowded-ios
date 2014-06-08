@@ -131,7 +131,7 @@
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NJC-HO-EgB">
                                         <rect key="frame" x="224" y="24" width="68" height="15"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Edmondsans-Regular" family="Edmondsans" pointSize="15"/>
+                                        <fontDescription key="fontDescription" name="Edmondsans-Medium" family="Edmondsans" pointSize="15"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -155,6 +155,9 @@
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.098039215690000001" green="0.1058823529" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="1q5-BC-B0C" appends="YES" id="ON0-NF-r0C"/>
+                                </connections>
                             </view>
                             <view contentMode="scaleToFill" id="xAq-Di-HPK" customClass="CDBorderedView">
                                 <rect key="frame" x="14" y="447" width="292" height="54"/>
@@ -209,8 +212,88 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="1q5-BC-B0C">
+                    <connections>
+                        <segue destination="IJN-h3-yCG" kind="push" identifier="menuSegue" id="TWq-ln-s7y"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="704" y="136"/>
+        </scene>
+        <!--Menu View Controller-->
+        <scene sceneID="sZV-in-rsb">
+            <objects>
+                <viewController id="IJN-h3-yCG" customClass="CDMenuViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="i0H-1I-Nzq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background.png" id="cCn-vM-XqL">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="82" sectionHeaderHeight="22" sectionFooterHeight="22" id="PhT-Uk-CDi">
+                                <rect key="frame" x="0.0" y="63" width="320" height="455"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="menuCell" id="7CM-Yx-w9t" customClass="CDMenuTableViewCell">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7CM-Yx-w9t" id="Jgd-cd-Sh7">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" id="PTX-Vv-kqv" customClass="CDBorderedView">
+                                                    <rect key="frame" x="9" y="12" width="302" height="70"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <subviews>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WEIHENSTEPHANER HEFE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9Xl-4P-YOn">
+                                                            <rect key="frame" x="9" y="9" width="228" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="Edmondsans-Medium" family="Edmondsans" pointSize="15"/>
+                                                            <color key="textColor" red="0.86666666670000003" green="0.38823529410000002" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$8.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sMg-Gl-XVw">
+                                                            <rect key="frame" x="243" y="27" width="49" height="15"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="Edmondsans-Medium" family="Edmondsans" pointSize="15"/>
+                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HjM-ov-jzY">
+                                                            <rect key="frame" x="9" y="32" width="201" height="30"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="Edmondsans-Regular" family="Edmondsans" pointSize="12"/>
+                                                            <color key="textColor" red="0.63921568630000003" green="0.63921568630000003" blue="0.65098039220000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.098039215690000001" green="0.1058823529" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="itemDescriptionLabel" destination="HjM-ov-jzY" id="0vT-zv-XS6"/>
+                                            <outlet property="itemNameLabel" destination="9Xl-4P-YOn" id="qOQ-gI-pdj"/>
+                                            <outlet property="itemPriceLabel" destination="sMg-Gl-XVw" id="9eN-f8-XgW"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="IJN-h3-yCG" id="C4X-Dy-kCy"/>
+                                    <outlet property="delegate" destination="IJN-h3-yCG" id="8Gh-s8-SDz"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ZP3-We-f6m"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I0J-lX-YFV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1124" y="136"/>
         </scene>
         <!--Now View Controller-->
         <scene sceneID="dFO-uM-9ln">

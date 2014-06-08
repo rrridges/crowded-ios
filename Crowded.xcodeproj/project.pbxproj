@@ -62,6 +62,8 @@
 		C909D6F61943F642002272AC /* CDNowTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C909D6F51943F642002272AC /* CDNowTableViewCell.m */; };
 		C909D6F9194409FA002272AC /* arrow_forward.png in Resources */ = {isa = PBXBuildFile; fileRef = C909D6F7194409FA002272AC /* arrow_forward.png */; };
 		C909D6FA194409FA002272AC /* arrow_forward@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C909D6F8194409FA002272AC /* arrow_forward@2x.png */; };
+		C9CAA17B1944161200B4ED18 /* CDMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9CAA17A1944161200B4ED18 /* CDMenuViewController.m */; };
+		C9CAA17E19441C2E00B4ED18 /* CDMenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9CAA17D19441C2E00B4ED18 /* CDMenuTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,6 +147,10 @@
 		C909D6F51943F642002272AC /* CDNowTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDNowTableViewCell.m; sourceTree = "<group>"; };
 		C909D6F7194409FA002272AC /* arrow_forward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_forward.png; sourceTree = "<group>"; };
 		C909D6F8194409FA002272AC /* arrow_forward@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_forward@2x.png"; sourceTree = "<group>"; };
+		C9CAA1791944161200B4ED18 /* CDMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMenuViewController.h; sourceTree = "<group>"; };
+		C9CAA17A1944161200B4ED18 /* CDMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMenuViewController.m; sourceTree = "<group>"; };
+		C9CAA17C19441C2E00B4ED18 /* CDMenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMenuTableViewCell.h; sourceTree = "<group>"; };
+		C9CAA17D19441C2E00B4ED18 /* CDMenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMenuTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,6 +244,8 @@
 				C909D68519438D12002272AC /* CDVenueViewController.m */,
 				C909D6F11943F37E002272AC /* CDNowViewController.h */,
 				C909D6F21943F37E002272AC /* CDNowViewController.m */,
+				C9CAA1791944161200B4ED18 /* CDMenuViewController.h */,
+				C9CAA17A1944161200B4ED18 /* CDMenuViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -313,6 +321,8 @@
 				C909D6DF1943B2E9002272AC /* CDBorderedView.m */,
 				C909D6F41943F642002272AC /* CDNowTableViewCell.h */,
 				C909D6F51943F642002272AC /* CDNowTableViewCell.m */,
+				C9CAA17C19441C2E00B4ED18 /* CDMenuTableViewCell.h */,
+				C9CAA17D19441C2E00B4ED18 /* CDMenuTableViewCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -484,8 +494,10 @@
 			files = (
 				C909D6F31943F37E002272AC /* CDNowViewController.m in Sources */,
 				C909D6D91943A833002272AC /* CDVenue.m in Sources */,
+				C9CAA17E19441C2E00B4ED18 /* CDMenuTableViewCell.m in Sources */,
 				C909D6D219439FC5002272AC /* CDCrowdedView.m in Sources */,
 				C909D6EC1943CD56002272AC /* CDBeaconManager.m in Sources */,
+				C9CAA17B1944161200B4ED18 /* CDMenuViewController.m in Sources */,
 				C909D6E91943C261002272AC /* NSString+CrowdLevel.m in Sources */,
 				C909D6DD1943B1D3002272AC /* CDMenuItem.m in Sources */,
 				C909D66719438C61002272AC /* AppDelegate.m in Sources */,

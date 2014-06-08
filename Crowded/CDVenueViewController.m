@@ -13,6 +13,7 @@
 #import "Common.h"
 #import "CDMenuItem.h"
 #import "NSString+CrowdLevel.h"
+#import "CDMenuViewController.h"
 
 @interface CDVenueViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *address1Label;
@@ -44,6 +45,7 @@
     }
     [self setupWithVenue:self.venue];
     [self setupWithSpecial:[self dummySpecial]];
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Venue" style:UIBarButtonItemStylePlain target:nil action:nil];
     // Do any additional setup after loading the view.
 }
 
@@ -78,6 +80,22 @@
     self.specialNameLabel.text = item.name;
     self.specialDescriptionLabel.text = item.itemDescription;
     self.specialPriceLabel.text = [NSString stringWithFormat:@"$%.2f", item.price.floatValue];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"menuSegue"]) {
+        CDMenuViewController *vc = (CDMenuViewController *)segue.destinationViewController;
+        NSMutableArray *menuItems = [NSMutableArray array];
+        CDMenuItem *item = [[CDMenuItem alloc] init];
+        item.itemDescription = @"Farmhouse brewed with white sage, Baltimore MD 12.0 Oz, 6.6 ABV";
+        item.name = @"SMUTTYNOSE CELLAR DOOR";
+        item.price = [[NSDecimalNumber alloc] initWithDouble:8.0];
+        
+        for (int i = 0; i < 8; i++) {
+            [menuItems addObject:item];
+        }
+        vc.menuItems = menuItems;
+    }
 }
 
 - (void)didReceiveMemoryWarning
