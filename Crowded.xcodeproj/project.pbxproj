@@ -58,6 +58,8 @@
 		C909D6EC1943CD56002272AC /* CDBeaconManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C909D6EB1943CD56002272AC /* CDBeaconManager.m */; };
 		C909D6EE1943CD85002272AC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C909D6ED1943CD85002272AC /* CoreLocation.framework */; };
 		C909D6F01943D9AB002272AC /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C909D6EF1943D9AB002272AC /* CoreBluetooth.framework */; };
+		C909D6F31943F37E002272AC /* CDNowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C909D6F21943F37E002272AC /* CDNowViewController.m */; };
+		C909D6F61943F642002272AC /* CDNowTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C909D6F51943F642002272AC /* CDNowTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +137,10 @@
 		C909D6EB1943CD56002272AC /* CDBeaconManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDBeaconManager.m; sourceTree = "<group>"; };
 		C909D6ED1943CD85002272AC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		C909D6EF1943D9AB002272AC /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		C909D6F11943F37E002272AC /* CDNowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDNowViewController.h; sourceTree = "<group>"; };
+		C909D6F21943F37E002272AC /* CDNowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDNowViewController.m; sourceTree = "<group>"; };
+		C909D6F41943F642002272AC /* CDNowTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDNowTableViewCell.h; sourceTree = "<group>"; };
+		C909D6F51943F642002272AC /* CDNowTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDNowTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +232,8 @@
 			children = (
 				C909D68419438D12002272AC /* CDVenueViewController.h */,
 				C909D68519438D12002272AC /* CDVenueViewController.m */,
+				C909D6F11943F37E002272AC /* CDNowViewController.h */,
+				C909D6F21943F37E002272AC /* CDNowViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -297,6 +305,8 @@
 				C909D6D119439FC5002272AC /* CDCrowdedView.m */,
 				C909D6DE1943B2E9002272AC /* CDBorderedView.h */,
 				C909D6DF1943B2E9002272AC /* CDBorderedView.m */,
+				C909D6F41943F642002272AC /* CDNowTableViewCell.h */,
+				C909D6F51943F642002272AC /* CDNowTableViewCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -464,6 +474,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C909D6F31943F37E002272AC /* CDNowViewController.m in Sources */,
 				C909D6D91943A833002272AC /* CDVenue.m in Sources */,
 				C909D6D219439FC5002272AC /* CDCrowdedView.m in Sources */,
 				C909D6EC1943CD56002272AC /* CDBeaconManager.m in Sources */,
@@ -471,6 +482,7 @@
 				C909D6DD1943B1D3002272AC /* CDMenuItem.m in Sources */,
 				C909D66719438C61002272AC /* AppDelegate.m in Sources */,
 				C909D68619438D12002272AC /* CDVenueViewController.m in Sources */,
+				C909D6F61943F642002272AC /* CDNowTableViewCell.m in Sources */,
 				C909D6E01943B2E9002272AC /* CDBorderedView.m in Sources */,
 				C909D66419438C61002272AC /* main.m in Sources */,
 			);
