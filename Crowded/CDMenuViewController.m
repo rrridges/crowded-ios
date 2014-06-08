@@ -9,9 +9,10 @@
 #import "CDMenuViewController.h"
 #import "CDMenuItem.h"
 #import "CDMenuTableViewCell.h"
+#import "CDOrderViewController.h"
 
 @interface CDMenuViewController () <UITableViewDataSource, UITableViewDelegate>
-
+@property (nonatomic) CDMenuItem *selectedItem;
 @end
 
 @implementation CDMenuViewController
@@ -29,6 +30,7 @@
 {
     [super viewDidLoad];
     self.navigationItem.title = @"Menu";
+    
     // Do any additional setup after loading the view.
 }
 
@@ -60,7 +62,16 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    self.selectedItem = self.menuItems[indexPath.row];
+    [self performSegueWithIdentifier:@"orderSegue" sender:self];
     
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"orderSegue"]) {
+        CDOrderViewController *vc = (CDOrderViewController *)segue.destinationViewController;
+        vc.menuItem = self.selectedItem;
+    }
 }
 
 /*

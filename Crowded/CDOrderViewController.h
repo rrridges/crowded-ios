@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+@class CDMenuItem;
 
 @interface CDOrderViewController : UIViewController
+@property (nonatomic) CDMenuItem *menuItem;
 
 @end

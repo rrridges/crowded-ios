@@ -82,18 +82,36 @@
     self.specialPriceLabel.text = [NSString stringWithFormat:@"$%.2f", item.price.floatValue];
 }
 
+- (CDMenuItem *)itemWithName:(NSString *)name description:(NSString *)description price:(NSDecimalNumber *)price {
+    CDMenuItem *item = [[CDMenuItem alloc] init];
+    item.itemDescription = description;
+    item.name = name;
+    item.price = price;
+    return item;
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"menuSegue"]) {
         CDMenuViewController *vc = (CDMenuViewController *)segue.destinationViewController;
         NSMutableArray *menuItems = [NSMutableArray array];
-        CDMenuItem *item = [[CDMenuItem alloc] init];
-        item.itemDescription = @"Farmhouse brewed with white sage, Baltimore MD 12.0 Oz, 6.6 ABV";
-        item.name = @"SMUTTYNOSE CELLAR DOOR";
-        item.price = [[NSDecimalNumber alloc] initWithDouble:8.0];
         
-        for (int i = 0; i < 8; i++) {
-            [menuItems addObject:item];
-        }
+        [menuItems addObject:[self itemWithName:@"WEIHENSTEPHANER HEFE"
+                                    description:@"Hefeweizen, Freising Germany. 20.0 oz, 5.1 ABV"
+                                          price:[[NSDecimalNumber alloc] initWithDouble:7.0]]];
+        [menuItems addObject:[self itemWithName:@"TRILLIUM DRY STACK #5"
+                                    description:@"Farmhouse IPA, Boston MA. 13.0 oz, 7.3 ABV"
+                                          price:[[NSDecimalNumber alloc] initWithDouble:7.0]]];
+        [menuItems addObject:[self itemWithName:@"STILLWATER CELLAR DOOR"
+                                    description:@"Farmhouse brewed with white sage, Baltimore MD. 12.0 oz, 6.6 ABV"
+                                          price:[[NSDecimalNumber alloc] initWithDouble:8.0]]];
+        [menuItems addObject:[self itemWithName:@"SMUTTYNOSE OLD BROWN DOG"
+                                    description:@"American Brown Ale, Portsmouth NH. 16.0 oz, 6.9 ABV"
+                                          price:[[NSDecimalNumber alloc] initWithDouble:6.0]]];
+        [menuItems addObject:[self itemWithName:@"SMUTTYNOSE IPA"
+                                    description:@"Hoppy American IPA, Portsmouth NH. 16.0 oz, 6.9 ABV"
+                                          price:[[NSDecimalNumber alloc] initWithDouble:5.5]]];
+        
+
         vc.menuItems = menuItems;
     }
 }

@@ -7,9 +7,17 @@
 //
 
 #import "CDOrderViewController.h"
+#import "CDMenuItem.h"
 
 @interface CDOrderViewController ()
-
+@property (weak, nonatomic) IBOutlet UILabel *itemNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *itemDescriptionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *itemPriceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *subtotalPriceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *taxLabel;
+@property (weak, nonatomic) IBOutlet UILabel *tipLabel;
+@property (weak, nonatomic) IBOutlet UILabel *totalLabel;
+@property (weak, nonatomic) IBOutlet UIView *successPopup;
 @end
 
 @implementation CDOrderViewController
@@ -26,13 +34,27 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self setupWithMenuItem:self.menuItem];
     // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)setupWithMenuItem:(CDMenuItem *)item {
+    
+    NSDecimalNumber *price = self.menuItem.price;
+    double tax = price.doubleValue * 0.05;
+    double tip = price.doubleValue * 0.2;
+    self.itemNameLabel.text = self.menuItem.name;
+    self.itemDescriptionLabel.text = self.menuItem.itemDescription;
+    self.itemPriceLabel.text = [NSString stringWithFormat:@"$%0.2f", price.doubleValue];
+    self.subtotalPriceLabel.text = [NSString stringWithFormat:@"$%0.2f", price.doubleValue];
+    self.taxLabel.text = [NSString stringWithFormat:@"$%0.2f", tax];
+    self.tipLabel.text = [NSString stringWithFormat:@"$%0.2f", tip];
+    self.totalLabel.text = [NSString stringWithFormat:@"$%0.2f", tax + tip + price.doubleValue];
+    
+}
+
+- (IBAction)completeOrderTapped:(id)sender {
+    self.successPopup.hidden = NO;
 }
 
 /*
