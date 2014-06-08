@@ -41,4 +41,35 @@
         }
     }];
 }
+
+- (void)placeOrderWithUserId:(NSString *)userId venueId:(NSString *)venueId drinkName:(NSString *)drinkName completion:(CDCompletionBlock)completion{
+    NSURL *url = [NSURL URLWithString:@"http://crowded-api.herokuapp.com/addNewOrder"];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    
+    NSMutableDictionary *payload = [NSMutableDictionary dictionary];
+    payload[@"user_id"] = userId;
+    payload[@"venue_id"] = venueId;
+    payload[@"drinkName"] = drinkName;
+    payload[@"specialInstructions"] = @"";
+    
+    NSData *body = [NSJSONSerialization dataWithJSONObject:payload options:0 error:nil];
+    NSString *bodyString = [[NSString alloc] initWithData:body encoding:NSUTF8StringEncoding];
+    NSLog(@"%@", bodyString);
+    
+    [request setHTTPBody:body];
+    
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+        if (!connectionError && httpResponse.statusCode == 200) {
+            completion(nil, @true);
+        } else {
+            NSString *responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+            NSLog(@"Response: %@ Error: %@ StatusCode: %d", responseString, connectionError, httpResponse.statusCode);
+            completion(connectionError, @false);
+        }
+    }];
+    
+}
 @end

@@ -8,6 +8,8 @@
 
 #import "CDOrderViewController.h"
 #import "CDMenuItem.h"
+#import <SVProgressHUD/SVProgressHUD.h>
+#import "CDWebService.h"
 
 @interface CDOrderViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *itemNameLabel;
@@ -54,7 +56,17 @@
 }
 
 - (IBAction)completeOrderTapped:(id)sender {
-    self.successPopup.hidden = NO;
+    [SVProgressHUD showWithStatus:@"Ordering"];
+
+    CDWebService *service = [[CDWebService alloc] init];
+    [service placeOrderWithUserId:@"4" venueId:@"0" drinkName:self.menuItem.name completion:^(NSError *error, id result) {
+        if ([result boolValue]) {
+            [SVProgressHUD dismiss];
+            self.successPopup.hidden = NO;
+        } else {
+            [SVProgressHUD showErrorWithStatus:@"Oops! Something went wrong."];
+        }
+    }];
 }
 
 /*
