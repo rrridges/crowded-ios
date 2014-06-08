@@ -7,11 +7,17 @@
 //
 
 #import "CDBeaconManager.h"
+#import "CDVenue.h"
 #import <CoreLocation/CoreLocation.h>
+#import <CoreBluetooth/CoreBluetooth.h>
 
-@interface CDBeaconManager () <CLLocationManagerDelegate>
+NSString * const kCDBeaconManagerVenueChangedNotification = @"kCDBeaconManagerVenueChangedNotification";
+
+@interface CDBeaconManager () <CLLocationManagerDelegate, CBCentralManagerDelegate>
 @property (nonatomic) CLLocationManager *locationManager;
+@property (nonatomic) CBCentralManager *bluetoothManager;
 @property (nonatomic) CLBeaconRegion *region;
+@property (atomic) NSInteger operationCount;
 @end
 
 @implementation CDBeaconManager
@@ -20,6 +26,8 @@
     if (self = [super init]) {
         self.locationManager = [[CLLocationManager alloc] init];
         self.locationManager.delegate = self;
+        self.bluetoothManager = [[CBCentralManager alloc] initWithDelegate:self queue:dispatch_get_main_queue()];
+        self.bluetoothManager.delegate = self;
     }
     return self;
 }
@@ -40,6 +48,33 @@
     
 }
 
+- (void)centralManagerDidUpdateState:(CBCentralManager *)central
+{
+    NSString *stateString = nil;
+    switch(self.bluetoothManager.state)
+    {
+        case CBCentralManagerStateResetting:
+            stateString = @"The connection with the system service was momentarily lost, update imminent.";
+            break;
+        case CBCentralManagerStateUnsupported:
+            stateString = @"The platform doesn't support Bluetooth Low Energy.";
+            break;
+        case CBCentralManagerStateUnauthorized:
+            stateString = @"The app is not authorized to use Bluetooth Low Energy.";
+            break;
+        case CBCentralManagerStatePoweredOff:
+            [self setCurrentVenueWithBeacon:nil];
+            stateString = @"Bluetooth is currently powered off.";
+            break;
+        case CBCentralManagerStatePoweredOn:
+            stateString = @"Bluetooth is currently powered on and available to use.";
+            break;
+        default: stateString = @"State unknown, update imminent."; break;
+    }
+    
+    NSLog(@"Bluetooth state changed to %@", stateString);
+}
+
 - (void)locationManager:(CLLocationManager *)manager didStartMonitoringForRegion:(CLRegion *)region {
     NSLog(@"Started monitoring");
     [self.locationManager requestStateForRegion:region];
@@ -51,7 +86,8 @@
         CLBeaconRegion *beaconRegion = (CLBeaconRegion *)region;
         switch (state) {
             case CLRegionStateInside:
-                [self.locationManager startRangingBeaconsInRegion:beaconRegion];
+                [self setCurrentVenueWithBeacon:beaconRegion];
+                //[self.locationManager startRangingBeaconsInRegion:beaconRegion];
                 break;
             default:
                 break;
@@ -62,10 +98,12 @@
 
 - (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region {
     NSLog(@"Entered region");
+    [self setCurrentVenueWithBeacon:(CLBeaconRegion *)region];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didExitRegion:(CLRegion *)region {
     NSLog(@"Exited region");
+    [self setCurrentVenueWithBeacon:nil];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
@@ -74,7 +112,7 @@
 
 - (void)locationManager:(CLLocationManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region {
     for (CLBeacon *beacon in beacons) {
-        NSLog(@"Ranged a beacon at distance: %f", beacon.accuracy);
+        //NSLog(@"Ranged a beacon at distance: %f", beacon.accuracy);
     }
 }
 
@@ -89,6 +127,27 @@
     }
 }
 
+
+- (void)setCurrentVenueWithBeacon:(CLBeaconRegion *)region {
+    
+    NSInteger operationId = ++self.operationCount;
+    
+    if (!region) {
+        self.currentVenue = nil;
+        [[NSNotificationCenter defaultCenter] postNotificationName:kCDBeaconManagerVenueChangedNotification object:self];
+    } else {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            @synchronized (self) {
+                if (self.operationCount == operationId) {
+                    CDVenue *venue = [[CDVenue alloc] init];
+                    venue.name = @"Atwoods";
+                    self.currentVenue = venue;
+                    [[NSNotificationCenter defaultCenter] postNotificationName:kCDBeaconManagerVenueChangedNotification object:self];
+                }
+            }
+        });
+    }
+}
 
 
 

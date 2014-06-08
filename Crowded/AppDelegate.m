@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "Common.h"
 #import "CDBeaconManager.h"
+#import "CDVenue.h"
 
 @interface AppDelegate ()
             
@@ -24,8 +25,35 @@
     [self setupAppearance];
     self.beaconManager = [[CDBeaconManager alloc] init];
     [self.beaconManager startMonitoring];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(beaconChanged:) name:kCDBeaconManagerVenueChangedNotification object:nil];
+    
+
+    
+    UIMutableUserNotificationAction *yesAction = [[UIMutableUserNotificationAction alloc] init];
+    yesAction.identifier = @"Yes";
+    yesAction.title = @"Yes";
+    yesAction.activationMode = UIUserNotificationActivationModeForeground;
+    yesAction.authenticationRequired = NO;
+    yesAction.destructive = YES;
+    
+    UIMutableUserNotificationAction *noAction = [[UIMutableUserNotificationAction alloc] init];
+    noAction.identifier = @"No";
+    noAction.title = @"No";
+    noAction.activationMode = UIUserNotificationActivationModeBackground;
+    noAction.authenticationRequired = NO;
+    noAction.destructive = NO;
     
     
+    UIMutableUserNotificationCategory *category = [[UIMutableUserNotificationCategory alloc] init];
+    category.identifier = @"yesnoaction";
+    [category setActions:@[yesAction, noAction] forContext:UIUserNotificationActionContextMinimal];
+    [category setActions:@[yesAction, noAction] forContext:UIUserNotificationActionContextDefault];
+    
+    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert categories:[NSSet setWithObject:category]];
+    
+    
+    
+    [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
     
     return YES;
 }
@@ -48,6 +76,19 @@
     [[UITabBar appearance] setSelectionIndicatorImage:[UIImage imageNamed:@"selected_tab.png"]];
 }
 
+- (void)beaconChanged:(NSNotification *)notification {
+    NSLog(@"Venue changed to: %@", self.beaconManager.currentVenue);
+    
+    if (self.beaconManager.currentVenue && [UIApplication sharedApplication].applicationState != UIApplicationStateActive) {
+        UILocalNotification *notification = [[UILocalNotification alloc] init];
+        notification.fireDate = nil;
+        notification.alertBody = [NSString stringWithFormat:@"Welcome to %@, buy a drink?", self.beaconManager.currentVenue.name];
+        notification.category = @"yesnoaction";
+        [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+    }
+    
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
@@ -68,6 +109,18 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings {
+    NSLog(@"Registered");
+}
+
+- (void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forLocalNotification:(UILocalNotification *)notification completionHandler:(void (^)())completionHandler {
+    completionHandler();
+}
+
+- (void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo completionHandler:(void (^)())completionHandler {
+    
 }
 
 @end

@@ -8,6 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+extern NSString * const kCDBeaconManagerVenueChangedNotification;
+
+@class CDVenue;
+
 @interface CDBeaconManager : NSObject
+
+@property (nonatomic) CDVenue *currentVenue;
 - (void)startMonitoring;
+
 @end

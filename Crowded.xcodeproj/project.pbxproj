@@ -57,6 +57,7 @@
 		C909D6E91943C261002272AC /* NSString+CrowdLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = C909D6E81943C261002272AC /* NSString+CrowdLevel.m */; };
 		C909D6EC1943CD56002272AC /* CDBeaconManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C909D6EB1943CD56002272AC /* CDBeaconManager.m */; };
 		C909D6EE1943CD85002272AC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C909D6ED1943CD85002272AC /* CoreLocation.framework */; };
+		C909D6F01943D9AB002272AC /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C909D6EF1943D9AB002272AC /* CoreBluetooth.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,6 +134,7 @@
 		C909D6EA1943CD56002272AC /* CDBeaconManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDBeaconManager.h; sourceTree = "<group>"; };
 		C909D6EB1943CD56002272AC /* CDBeaconManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDBeaconManager.m; sourceTree = "<group>"; };
 		C909D6ED1943CD85002272AC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		C909D6EF1943D9AB002272AC /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C909D6F01943D9AB002272AC /* CoreBluetooth.framework in Frameworks */,
 				C909D6EE1943CD85002272AC /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -157,6 +160,7 @@
 		C909D65519438C61002272AC = {
 			isa = PBXGroup;
 			children = (
+				C909D6EF1943D9AB002272AC /* CoreBluetooth.framework */,
 				C909D6ED1943CD85002272AC /* CoreLocation.framework */,
 				C909D66019438C61002272AC /* Crowded */,
 				C909D67719438C61002272AC /* CrowdedTests */,
