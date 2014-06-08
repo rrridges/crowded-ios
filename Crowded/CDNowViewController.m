@@ -21,7 +21,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *currentVenueLabel;
 @property (weak, nonatomic) IBOutlet UILabel *currentVenueAddressLabel;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic) CDVenue *selectedVenue;
+
 @end
 
 @implementation CDNowViewController

@@ -10,6 +10,7 @@
 #import "Common.h"
 #import "CDBeaconManager.h"
 #import "CDVenue.h"
+#import "CDNowViewController.h"
 
 @interface AppDelegate ()
             
@@ -120,6 +121,15 @@
 }
 
 - (void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forLocalNotification:(UILocalNotification *)notification completionHandler:(void (^)())completionHandler {
+    if (self.beaconManager.currentVenue) {
+        UITabBarController *controller = (UITabBarController *)self.window.rootViewController;
+        controller.selectedIndex = 0;
+        UINavigationController *nav = (UINavigationController *)controller.viewControllers[0];
+        [nav popToRootViewControllerAnimated:NO];
+        CDNowViewController *now = (CDNowViewController *)nav.topViewController;
+        now.selectedVenue = self.beaconManager.currentVenue;
+        [now performSegueWithIdentifier:@"venueSegue" sender:now];
+    }
     completionHandler();
 }
 

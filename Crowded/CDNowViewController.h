@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+@class CDVenue;
 
 @interface CDNowViewController : UIViewController
-
+@property (nonatomic) CDVenue *selectedVenue;
 @end
